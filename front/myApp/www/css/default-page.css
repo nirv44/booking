@@ -1,0 +1,25 @@
+/** Style pour le header des pages **/
+.main-page .bar-header,
+.menu-content .bar-header{
+    background-color: #0B7892 !important;
+}
+.main-page .bar-header .title,
+.menu-content .bar-header .title,
+button.ion-navicon {
+    color: white !important;
+}
+
+/** Style pour le corps des pages **/
+.main-page .pane {
+    background-color: #ecf0f5 !important;
+}
+.main-page .pane ion-content,
+.main-page .pane .item, 
+.main-page .pane .item-complex, 
+.main-page .pane .item-content, 
+.main-page .pane .item-radio,
+.main-page .pane .item-content {
+    background-color: transparent !important;
+    color: #000 !important;
+    border: 0px !important;
+}
