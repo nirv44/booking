@@ -21,14 +21,6 @@ angular.module('app', ['ionic', 'app.controllers'])
         templateUrl: 'templates/menu.html',
         controller: 'AppController'
     })
-    .state('app.search', {
-        url: '/search',
-        views: {
-            'mainContent': {
-                templateUrl: 'templates/search.html'
-            }
-        }
-    })
     .state('app.compte  ', {
         url: '/compte',
         views: {
