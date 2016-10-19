@@ -1,5 +1,5 @@
 angular.module('app.controllers', [])
-.controller('AppController', function($scope, $ionicModal,$state) {
+.controller('AppController', function($scope, $ionicModal) {
 
     // With the new view caching in Ionic, Controllers are only called
     // when they are recreated or on app start, instead of every page change.
@@ -17,7 +17,7 @@ angular.module('app.controllers', [])
         scope: $scope
     }).then(function(modal) {
         $scope.modal = modal;
-        $scope.modal.show();
+       // $scope.modal.show();
     });
 
     // Open the login modal

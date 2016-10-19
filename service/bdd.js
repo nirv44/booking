@@ -6,9 +6,9 @@ mongo.Promise = global.Promise;
 
 
 // connect to MongoDB
-mongo.connect('mongodb://127.0.0.1/booking')
-	.then(() =>  console.log('connection succesful'))
-	.catch((err) => console.error(err));
+mongo.connect('mongodb://127.0.0.1/booking');
+	//.then(() =>  console.log('connection succesful'))
+	//.catch((err) => console.error(err));
 
 
 
