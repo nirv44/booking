@@ -18,7 +18,7 @@ app.use(function(req, res, next) {
 // dès qu'une requête de type options est envoyé à une url de l'api
 // le serveur répond qu'il accepte les méthodes GET, PUT, POST, DELETE et OPTIONS
 app.options('/api/*', function (request, response, next) {
-    response.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE, OPTIONS");
+    response.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
     response.send();
 });
 
@@ -35,6 +35,10 @@ app.post('/newsletterfilter', bdd.addnewsletterFilter);
 
 app.get('/newsletterfilter', bdd.findAllnewsletterFilter);
 app.post('/newsletterfilter', bdd.addnewsletterFilter);
+
+
+app.post('/trainneraccount', bdd.addtrainneraccount);
+
 
 app.listen(3000);
 console.log('Listening on port 3000...');
