@@ -105,22 +105,166 @@ exports.addnewsletterFilter = function(req, res) {
 ////////////////////// trainneraccount
 
 var trainneraccountSchema = new mongo.Schema({
-	
+	isViadeo: Boolean,
+  isLinkedin: Boolean,
+  mail: String,
+  login: String,
+  password: String,
+  lastName: String,
+  firstName: String,
+  studiesLevel: String
 });
 
 trainneraccountModel = mongo.model('trainneraccount', trainneraccountSchema);
 
 
-exports.findAllnewsletterFilter = function(req, res) {
+exports.findAlltrainneraccount = function(req, res) {
     trainneraccountModel.find(function (err, post) {
     if (err) return next(err);
     	res.json(post);
 	});
 };
 
-exports.addnewsletterFilter = function(req, res) {
+exports.addtrainneraccount = function(req, res) {
     trainneraccountModel.create(req.body, function (err, post) {
     if (err) return next(err);
     	res.json(post);
 	});
+}
+
+
+//////////////////////////////////
+////////////////////// companyaccount
+
+var companyaccountSchema = new mongo.Schema({
+  isViadeo: Boolean,
+  isLinkedin: Boolean,
+  mail: String,
+  login: String,
+  password: String,
+  lastName: String,
+  firstName: String,
+  idCompany: String,
+  fonction: String
+});
+
+companyaccountModel = mongo.model('companyaccount', companyaccountSchema);
+
+
+exports.findAllcompanyaccount = function(req, res) {
+    companyaccountModel.find(function (err, post) {
+    if (err) return next(err);
+      res.json(post);
+  });
+};
+
+exports.addcompanyaccount = function(req, res) {
+    companyaccountModel.create(req.body, function (err, post) {
+    if (err) return next(err);
+      res.json(post);
+  });
+}
+
+
+//////////////////////////////////
+////////////////////// apply
+
+var applySchema = new mongo.Schema({
+  idAccount: String,
+  idState: String,
+  idInternOffer: String
+});
+
+applyModel = mongo.model('apply', applySchema);
+
+
+exports.findAllapply = function(req, res) {
+    applyModel.find(function (err, post) {
+    if (err) return next(err);
+      res.json(post);
+  });
+};
+
+exports.addapply = function(req, res) {
+    applyModel.create(req.body, function (err, post) {
+    if (err) return next(err);
+      res.json(post);
+  });
+}
+
+//////////////////////////////////
+////////////////////// stateinternoffer
+
+var stateinternofferSchema = new mongo.Schema({
+  idAccount: String,
+  idState: String,
+  idInternOffer: String
+});
+
+stateinternofferModel = mongo.model('stateinternoffer', stateinternofferSchema);
+
+
+exports.findAllstateinternoffer = function(req, res) {
+    stateinternofferModel.find(function (err, post) {
+    if (err) return next(err);
+      res.json(post);
+  });
+};
+
+exports.addstateinternoffer = function(req, res) {
+    stateinternofferModel.create(req.body, function (err, post) {
+    if (err) return next(err);
+      res.json(post);
+  });
+}
+
+
+//////////////////////////////////
+////////////////////// notice
+
+var noticeSchema = new mongo.Schema({
+  grade: String,
+  comment: String
+});
+
+noticeModel = mongo.model('notice', noticeSchema);
+
+
+exports.findAllnotice = function(req, res) {
+    noticeModel.find(function (err, post) {
+    if (err) return next(err);
+      res.json(post);
+  });
+};
+
+exports.addnotice = function(req, res) {
+    noticeModel.create(req.body, function (err, post) {
+    if (err) return next(err);
+      res.json(post);
+  });
+}
+
+//////////////////////////////////
+////////////////////// company
+
+var companySchema = new mongo.Schema({
+  grade: String,
+  comment: String
+});
+
+companyModel = mongo.model('company', companySchema);
+
+
+exports.findAllcompany = function(req, res) {
+    companyModel.find(function (err, post) {
+    if (err) return next(err);
+      res.json(post);
+  });
+};
+
+exports.addcompany = function(req, res) {
+    companyModel.create(req.body, function (err, post) {
+    if (err) return next(err);
+      res.json(post);
+  });
 }
