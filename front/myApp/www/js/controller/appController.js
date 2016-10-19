@@ -145,8 +145,8 @@ angular.module('app.controllers', [])
         console.log('Subscribe : ', $scope.subscribeViewModel);
     };
     
-    // Cancel the inscription form
-    $scope.doSubscribeCancel = function () {
+    // Close the inscription form
+    $scope.doCloseSubscribeForm = function () {
         $scope.subscribeModal.hide();
     };  
     

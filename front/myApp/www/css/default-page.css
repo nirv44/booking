@@ -65,3 +65,8 @@ button.ion-navicon {
 .font-16 {
     font-size: 16px;
 }
+
+.button-positive {
+    background-color: #0B7892 !important;
+    color: white !important;
+}

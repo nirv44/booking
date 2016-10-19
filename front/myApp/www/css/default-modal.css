@@ -5,6 +5,11 @@
 .modal .bar-header .title  {
     color: white !important;
 }
+.modal .close-btn {
+    margin: 4px;
+    height: 24px;
+    width: 24px;
+}
 
 /** Style pour le corps des modal **/
 .modal ion-content,

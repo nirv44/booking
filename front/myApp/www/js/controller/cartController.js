@@ -19,6 +19,11 @@ angular.module('app.controllers')
         $scope.applyForm.show();
     };
     
+    // Close apply form 
+    $scope.doCloseApplyForm = function() {
+        $scope.applyForm.hide();
+    };
+    
     // Launch user appliance to current 
     $scope.doApply = function() {
         $scope.removeOffer($scope.applyForm.offerId);
