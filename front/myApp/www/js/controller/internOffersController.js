@@ -1,5 +1,9 @@
 angular.module('app.controllers')
-.controller('InternOffersController', function($scope) {
+.controller('InternOffersController', function($scope, $ionicModal) {
+    
+    // ViewModel for filterModal
+    $scope.filterViewModel = {};
+    
     // Mock offers
     $scope.offers = [
         { 
@@ -147,4 +151,23 @@ angular.module('app.controllers')
             ]
         }
     ];
+    
+    // Create the filter modal
+    $ionicModal.fromTemplateUrl('templates/filterOffer.html', {
+        scope: $scope
+    }).then(function(modal) {
+        $scope.filterOfferModal = modal;
+    });
+    
+    // Open filter form
+    $scope.filterOffer = function() {
+        $scope.filterOfferModal.show();
+    };
+    
+    // Filter offer list 
+    $scope.doFilterOffer = function() {
+        $scope.filterOfferModal.hide();
+        // TODO [AVAN] : Launch filtering
+    };
+    
 });
