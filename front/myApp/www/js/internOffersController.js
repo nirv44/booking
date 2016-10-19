@@ -1,5 +1,6 @@
 angular.module('app.controllers')
 .controller('InternOffersController', function($scope) {
+    // Récupération des offres
     $scope.offers = [
         { title: 'CGI', id: 1 },
         { title: 'CGI', id: 2 },
