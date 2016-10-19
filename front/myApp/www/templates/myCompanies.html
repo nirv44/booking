@@ -1,0 +1,18 @@
+<ion-view view-title="Mes entreprises">
+    <ion-content>        
+        <ion-list>
+            <ion-item ng-repeat="company in myCompanies" href="#/app/myCompanies/{{company.id}}">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td class="middle-valign">
+                                <img class="middle-valign" src="{{company.logoLink}}" height="50" width="50"/>
+                                <span class="hpad-10>{{company.name}}</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
