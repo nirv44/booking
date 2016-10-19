@@ -4,24 +4,21 @@
     </ion-header-bar>
     <ion-content>
         <form ng-submit="doLogin()">
-            <div class="list">
-                <label class="item item-input">
+            <div class="list no-border">
+                <label class="item item-input no-border">
                     <span class="input-label">Login</span>
                     <input type="text" ng-model="loginViewModel.username">
                 </label>
-                <label class="item item-input">
+                <label class="item item-input no-border">
                     <span class="input-label">Mot de passe</span>
                     <input type="password" ng-model="loginViewModel.password">
                 </label>
-                <label class="item">
+                <label class="item no-border">
                     <button class="button button-block button-positive" type="submit">Se connecter</button>
                 </label>
             </div>
         </form>
-        <form ng-submit="formInscription()">
-            <label class="item">
-                <button class="button button-block button-positive" type="submit">Pas encore inscrit ?</button>
-            </label>
-        </form>
-    </ion-content>
+        <label class="item no-border">
+            <button class="button button-block button-positive" ng-click="formInscription()" type="submit">Pas encore inscrit ?</button>
+        </label>
 </ion-modal-view>

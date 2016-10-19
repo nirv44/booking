@@ -164,6 +164,11 @@ angular.module('app.controllers')
         $scope.filterOfferModal.show();
     };
     
+    // Close filter form
+    $scope.doCloseFilterOffer = function() {
+        $scope.filterOfferModal.hide();
+    };
+    
     // Filter offer list 
     $scope.doFilterOffer = function() {
         $scope.filterOfferModal.hide();

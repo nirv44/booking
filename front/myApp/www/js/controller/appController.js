@@ -58,10 +58,6 @@ angular.module('app.controllers', [])
          $scope.modal.hide();
     };
     
-    $scope.formInscription = function() {
-        $scope.subscribeModal.show();
-    };
-
     subscribeTraineeTojson = function(inscription){
         return JSON.stringify({
             mail: inscription.mail,
@@ -143,6 +139,11 @@ angular.module('app.controllers', [])
 
 
         console.log('Subscribe : ', $scope.subscribeViewModel);
+    };
+    
+    // Open the inscription form
+    $scope.formInscription = function() {
+        $scope.subscribeModal.show();
     };
     
     // Close the inscription form
