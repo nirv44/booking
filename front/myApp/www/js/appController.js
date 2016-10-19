@@ -30,4 +30,10 @@ angular.module('app.controllers', [])
         console.log('Logged in : ', $scope.loginViewModel);
         $scope.modal.hide();
     };
+
+
+    $scope.formInscription = function() {
+        
+    }
+
 });

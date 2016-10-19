@@ -145,7 +145,8 @@ var companyaccountSchema = new mongo.Schema({
   lastName: String,
   firstName: String,
   idCompany: String,
-  fonction: String
+  fonction: String,
+  logoLink: String
 });
 
 companyaccountModel = mongo.model('companyaccount', companyaccountSchema);
