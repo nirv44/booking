@@ -2,7 +2,26 @@
     <ion-content>
         <ion-list>
             <ion-item ng-repeat="offer in offers" href="#/app/offers/{{offer.id}}">
-                {{offer.title}}
+                <table>
+                    <tbody>
+                        <tr>
+                            <td rowspan="2">
+                                <img src="{{offer.apply.state}}" height="64" width="64" style="vertical-align: middle;"/>
+                            </td>
+                            <td rowspan="2" style="padding:0px 10px;">
+                                <img src="{{offer.referent.company.logoLink}}" height="64" width="64" style="vertical-align: middle;"/>
+                            </td>
+                            <td style="vertical-align: middle;">
+                                <strong style="font-size:18px;">{{offer.label}}</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: top;">
+                                <span>{{offer.referent.company.name}}</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </ion-item>
         </ion-list>
     </ion-content>

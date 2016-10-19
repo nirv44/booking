@@ -17,7 +17,11 @@ angular.module('app.controllers', [])
         scope: $scope
     }).then(function(modal) {
         $scope.modal = modal;
+<<<<<<< HEAD:front/myApp/www/js/appController.js
        // $scope.modal.show();
+=======
+        //$scope.modal.show();
+>>>>>>> 8d7ad4591bf06694a9882abfe80ea009d836adf8:front/myApp/www/js/controller/appController.js
     });
 
     // Open the login modal
