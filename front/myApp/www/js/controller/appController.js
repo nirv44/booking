@@ -47,7 +47,7 @@ angular.module('app.controllers', [])
         };
         $http(req).then(
             function(response){
-                if(response.data != null){
+                if(response.data !== null){
                    
                 }
             }, 
@@ -70,7 +70,7 @@ angular.module('app.controllers', [])
             lastName: inscription.name,
             firstName: inscription.firstName
         });
-    }
+    };
 
     subscribeCompanyaccountTojson = function(inscription, idCompany){
         return JSON.stringify({
@@ -81,7 +81,7 @@ angular.module('app.controllers', [])
             firstName: inscription.firstName,
             idCompany: idCompany
         });
-    }
+    };
 
 // atente de mise a jour
     subscribeCompanyToJson = function(inscription){
@@ -89,17 +89,17 @@ angular.module('app.controllers', [])
             grade: "",
             comment: "" 
         });
-    }
+    };
 
     // Perform the subscripe action when the user submits the subscribe form
     $scope.doSubscribe = function() {
 
-        if(subscribeViewModel.isTrainee == true){
+        if(subscribeViewModel.isTrainee === true){
             var req = {
                 method: 'POST',
                 url: $scope.serverURL+'/trainneraccount',
                 data: subscribeTraineeTojson($scope.subscribeViewModel)
-            }
+            };
             $http(req).then(
                 function(response){
 
@@ -113,7 +113,7 @@ angular.module('app.controllers', [])
                 method: 'POST',
                 url: $scope.serverURL+'/company',
                 data : subscribeCompanyToJson($scope.subscribeViewModel)
-            }
+            };
             $http(req1).then(
                 // Si company bien insérer on prend l'id pour le liée au company account
                 function(response){
@@ -121,7 +121,7 @@ angular.module('app.controllers', [])
                         method: 'POST',
                         url: $scope.serverURL+'/companyaccount',
                         data: subscribeCompanyaccountTojson($scope.subscribeViewModel, response.data.idCompany)
-                    }
+                    };
                     $http(req).then(
                         function(response){
                             $scope.subscribeModal.hide();
