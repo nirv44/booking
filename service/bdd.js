@@ -126,6 +126,7 @@ exports.findAlltrainneraccount = function(req, res) {
 };
 
 exports.findOnetrainneraccount = function(req, res) {
+  console.log(req.params);
   trainneraccountModel.findOne({ login: req.params.login, password: req.params.password }, function (err, user) {
     if(err) return next(err);
     res.json(user);

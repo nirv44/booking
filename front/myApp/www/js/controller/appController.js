@@ -10,8 +10,9 @@ angular.module('app.controllers', [])
 
     // Form data for the login modal
     $scope.loginViewModel = {};
-    $scope.serverURL = "http://163.172.188.205:3000"
+    //$scope.serverURL = "http://163.172.188.205:3000";
 
+    $scope.serverURL = "http://127.0.0.1:3000";
     // Create the login modal that we will use later
     $ionicModal.fromTemplateUrl('templates/login.html', {
         scope: $scope
@@ -27,31 +28,28 @@ angular.module('app.controllers', [])
 
     // Perform the login action when the user submits the login form
     $scope.doLogin = function() {
-        
-    var req = {
-        method: 'POST',
-        url: $scope.serverURL+'/trainneraccount',
-        headers: {'Content-Type': 'application/json'},
-        data: JSON.stringify({ login: "test", password: "test",lastName: "test",firstName: "test"})
-    };
+        var req = {
+            method: 'GET',
+            url: $scope.serverURL+'/trainneraccount/'+$scope.loginViewModel.username+'/'+$scope.loginViewModel.password,
+            headers: {'Content-Type': 'application/json'}
+        };
+        $http(req).then(
+            function(response){
+                if(response.data != null){
+                    $scope.modal.hide();
+                }
+            }, 
+            function(response){
+                console.log(response);
+            }
+        );
 
-    $http(req).then(
-        function(response){
-            console.log("ok");
-        }, 
-        function(response){
-            console.log(response);
-        }
-    );
-
-
-
-        $scope.modal.hide();
     };
 
 
     $scope.formInscription = function() {
         
     }
+
 
 });

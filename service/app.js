@@ -38,7 +38,7 @@ app.post('/newsletterfilter', bdd.addnewsletterFilter);
 
 
 app.get('/trainneraccount', bdd.findAlltrainneraccount);
-app.get('/trainneraccount/:login/:password')
+app.get('/trainneraccount/:login/:password', bdd.findOnetrainneraccount);
 app.post('/trainneraccount', bdd.addtrainneraccount);
 
 
