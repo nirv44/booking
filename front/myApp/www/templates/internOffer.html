@@ -1,5 +1,33 @@
 <ion-view view-title="Offre">
+    <ion-nav-buttons side="right">
+        <img src="/img/panier.png" height="32" width="32"/>
+    </ion-nav-buttons>
     <ion-content>
-        {{offer.title}}
+        <table class="tableOffer">
+            <tr>
+                <td class="offerTitle">
+                    {{offer.label}}
+                </td>
+                <td class="logoCompany">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td class="description">
+                    {{offer.description}}
+                </td>
+                <td class="applyinformations">
+                    <div class="apply">
+                        <button class="buttonApply" type="submit">Postuler</button>
+                    </div>
+                    <div class="informations">
+                        <img src="/img/earning_offer.jpg" height="11" width="11"/>     <strong>{{offer.earning}}</strong><br />
+                        <img src="/img/arobase_offer.jpg" height="11" width="11"/>     {{offer.referent}} <br />
+                        <img src="/img/location_offer.jpg" height="11" width="11"/>     {{offer.location}} <br />
+                        <img src="/img/clock_offer.jpg" height="11" width="11"/>     {{offer.duration}} <br />
+                    </div>
+                </td>
+            </tr>
+        </table>
     </ion-content>
 </ion-view>
