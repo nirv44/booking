@@ -13,7 +13,6 @@ angular.module('app.controllers')
         location: 'Nulle part',
         duration: '1 jour',
         referent: {
-            name: 'Jean BOMBER',
             company : {
                 name: 'CGI',
                 logoLink: 'http://3.bp.blogspot.com/-6AOA3ACYmos/UPZGQCqEwYI/AAAAAAAAVnM/91uDFflFQEs/s1600/CGI+logo+2013.png'

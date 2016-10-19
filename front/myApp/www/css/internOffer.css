@@ -8,7 +8,7 @@
 */
 
 .tableOffer {
-
+    width: 100%;
 }
 
 .tableOffer tr td {
@@ -25,9 +25,11 @@
 .description {
     text-align: justify ;
     font-size: 13px;
-    width: 70%;
 }
 
+.applyinformations {
+    width: 125px;
+}
 .apply {
     
 }
@@ -39,7 +41,7 @@
 
 /**  **/
 .logoCompany{
-    background-color: black !important;
+    padding-top: 5px;
     width: 32px;
     height: 32px;
 }
@@ -57,6 +59,4 @@
     width: 100%;
     border-radius: 10px;
 }
-
-
 
