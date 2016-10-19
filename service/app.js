@@ -24,10 +24,13 @@ app.options('/api/*', function (request, response, next) {
 
 
 app.get('/internoffer', bdd.findAllInternOffer);
+app.get('/internoffer/:idAccount', bdd.findOneInternOffer);
 app.post('/internoffer', bdd.addInternOffer);
+
 
 app.get('/criteriafav', bdd.findAllCriteriaFav);
 app.post('/criteriafav', bdd.addCriteriaFav);
+
 
 app.get('/newsletterfilter', bdd.findAllnewsletterFilter);
 app.post('/newsletterfilter', bdd.addnewsletterFilter);
@@ -45,7 +48,9 @@ app.post('/trainneraccount', bdd.addtrainneraccount);
 app.get('/companyaccount', bdd.findAllcompanyaccount);
 app.post('/companyaccount', bdd.addcompanyaccount);
 
+
 app.get('/apply', bdd.findAllapply);
+app.get('/apply/:idAccount', bdd.finOneApply);
 app.post('/apply', bdd.addapply);
 
 
@@ -54,6 +59,8 @@ app.post('/stateinternoffer', bdd.addstateinternoffer);
 
 
 app.get('/notice', bdd.findAllnotice);
+app.get('/notice/trainneraccount/:idtrainneraccount', bdd.findOneNoticebyIdTraineeAccount);
+app.get('/notice/company/:idCompany', bdd.findOneNoticebyIdCompany);
 app.post('/notice', bdd.addnotice);
 
 

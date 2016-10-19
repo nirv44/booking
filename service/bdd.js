@@ -21,6 +21,7 @@ var interOfferSchema = new mongo.Schema({
   earning: String,
   description: String,
   referent: String // cle id company account
+
 });
 
 interOfferModel = mongo.model('interOffer', interOfferSchema);
@@ -32,6 +33,14 @@ exports.findAllInternOffer = function(req, res) {
     	res.json(post);
 	});
 };
+
+exports.findOneInternOffer = function(req, res) {
+  console.log(req);
+  interOfferModel.findOne({ _id: req.params.id }, function (err, user) {
+    if(err) return next(err);
+      res.json(user);
+  });
+}
 
 exports.addInternOffer = function(req, res) {
     interOfferModel.create(req.body, function (err, post) {
@@ -50,7 +59,8 @@ var criteriaFavSchema = new mongo.Schema({
   company: String,
   skills: String,
   startDate: String,
-  period: String
+  period: String,
+  idtrainneraccount: String
 });
 
 criteriaFavModel = mongo.model('criteriaFav', criteriaFavSchema);
@@ -194,6 +204,14 @@ exports.findAllapply = function(req, res) {
   });
 };
 
+exports.finOneApply = function() {
+  console.log(req.params);
+  applyModel.findOne({ idAccount: req.params.idAccount }, function (err, user) {
+    if(err) return next(err);
+      res.json(user);
+  });
+}
+
 exports.addapply = function(req, res) {
     applyModel.create(req.body, function (err, post) {
     if (err) return next(err);
@@ -233,7 +251,9 @@ exports.addstateinternoffer = function(req, res) {
 
 var noticeSchema = new mongo.Schema({
   grade: String,
-  comment: String
+  comment: String,
+  idtrainneraccount: String,
+  idCompany: String
 });
 
 noticeModel = mongo.model('notice', noticeSchema);
@@ -245,6 +265,24 @@ exports.findAllnotice = function(req, res) {
       res.json(post);
   });
 };
+
+
+exports.findOneNoticebyIdTraineeAccount = function(req, res) {
+  console.log(req.params);
+  noticeModel.findOne({ _id: req.params.idtrainneraccount }, function (err, user) {
+    if(err) return next(err);
+      res.json(user);
+  });
+}
+
+exports.findOneNoticebyIdCompany = function(req, res) {
+  console.log(req.params);
+  noticeModel.findOne({ _id: req.params.idCompany }, function (err, user) {
+    if(err) return next(err);
+      res.json(user);
+  });
+}
+
 
 exports.addnotice = function(req, res) {
     noticeModel.create(req.body, function (err, post) {
