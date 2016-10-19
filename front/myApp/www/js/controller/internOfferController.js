@@ -1,5 +1,5 @@
 angular.module('app.controllers')
-.controller('InternOfferController', function($scope, $stateParams) {
+.controller('InternOfferController', function($scope, $stateParams, $rootScope) {
     if (!$stateParams.offerId) throw new Error("No id passed to InternOfferController");
     // Récupération de l'id de l'offre en cours
     $scope.offerId = $stateParams.offerId;
@@ -13,5 +13,10 @@ angular.module('app.controllers')
         referent: 'JEAN BOMBER',
         location: 'PAR ICI ET PAR LA',
         duration: 'Jusqu\'à ce que ton âme soit consumé'
+    };
+    
+    // Add current offer to user's cart
+    $scope.addToCart = function () {
+        $rootScope.cartOffers.push($scope.offer);
     };
 });

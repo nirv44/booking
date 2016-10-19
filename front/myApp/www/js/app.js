@@ -54,6 +54,15 @@ angular.module('app', ['ionic', 'app.controllers'])
                 controller: 'InternOfferController'
             }
         }
+    })
+    .state('app.cart', {
+        url: '/cart',
+        views: {
+            'mainContent': {
+                templateUrl: 'templates/cart.html',
+                controller: 'CartController'
+            }
+        }
     });
     
     // if none of the above states are matched, use this as the fallback

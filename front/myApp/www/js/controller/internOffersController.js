@@ -1,6 +1,6 @@
 angular.module('app.controllers')
 .controller('InternOffersController', function($scope) {
-    // Récupération des offres
+    // Mock offers
     $scope.offers = [
         { 
             id: 1, 
@@ -8,6 +8,7 @@ angular.module('app.controllers')
             earning: '10K€',
             description: 'description test 1',
             location: 'Nulle part',
+            duration: '1 jour',
             referent: {
                 company : {
                     name: 'CGI',
@@ -15,8 +16,8 @@ angular.module('app.controllers')
                 }
             },
             currentApply: {
-                    state: 1,
-                    stateLabel: 'disponible'
+                state: 1,
+                stateLabel: 'disponible'
             },
             applies: [
                 {
@@ -31,6 +32,7 @@ angular.module('app.controllers')
             earning: '15K€',
             description: 'description test 2',
             location: 'Nulle part',
+            duration: 'Tous le temps',
             referent: {
                 company : {
                     name: 'IBP',
@@ -38,8 +40,8 @@ angular.module('app.controllers')
                 }
             },
             currentApply: {
-                    state: 1,
-                    stateLabel: 'refuse'
+                state: 1,
+                stateLabel: 'refuse'
             },
             applies: [
                 {
@@ -54,6 +56,7 @@ angular.module('app.controllers')
             earning: '8K€',
             description: 'description test 3',
             location: 'Nulle part',
+            duration: '10 semaines',
             referent: {
                 company : {
                     name: 'CapGemini',
@@ -61,8 +64,8 @@ angular.module('app.controllers')
                 }
             },
             currentApply: {
-                    state: 1,
-                    stateLabel: 'postule'
+                state: 1,
+                stateLabel: 'postule'
             },
             applies: [
                 {
@@ -77,6 +80,7 @@ angular.module('app.controllers')
             earning: '7K€',
             description: 'description test 4',
             location: 'Nulle part',
+            duration: '1 an',
             referent: {
                 company : {
                     name: 'Atos',
@@ -84,8 +88,8 @@ angular.module('app.controllers')
                 }
             },
             currentApply: {
-                    state: 1,
-                    stateLabel: 'disponible'
+                state: 1,
+                stateLabel: 'disponible'
             },
             applies: [
                 {
@@ -100,6 +104,7 @@ angular.module('app.controllers')
             earning: '22K€',
             description: 'description test 5',
             location: 'Nulle part',
+            duration: 'A vie',
             referent: {
                 company : {
                     name: 'Google',
@@ -107,8 +112,8 @@ angular.module('app.controllers')
                 }
             },
             currentApply: {
-                    state: 1,
-                    stateLabel: 'valide'
+                state: 1,
+                stateLabel: 'valide'
             },
             applies: [
                 {
@@ -123,6 +128,7 @@ angular.module('app.controllers')
             earning: '1K€',
             description: 'description test 6',
             location: 'Nulle part',
+            duration: '6 mois',
             referent: {
                 company : {
                     name: 'Accenture',
@@ -130,8 +136,8 @@ angular.module('app.controllers')
                 }
             },
             currentApply: {
-                    state: 1,
-                    stateLabel: 'postule'
+                state: 1,
+                stateLabel: 'postule'
             },
             applies: [
                 {

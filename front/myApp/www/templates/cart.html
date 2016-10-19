@@ -1,19 +1,20 @@
-<ion-view view-title="Offres de stage">
+<ion-view view-title="Mon panier">
     <ion-content>
-        TODO [AVAN] : Ajouter filtres
         <ion-list>
-            <ion-item ng-repeat="offer in offers" href="#/app/offers/{{offer.id}}">
+            <ion-item ng-repeat="offer in offers">
                 <table>
                     <tbody>
                         <tr>
-                            <td rowspan="2" style="padding:0px 30px 0px 0px;">
-                                <img src="/img/{{offer.currentApply.stateLabel}}.png" height="48" width="48" style="vertical-align: middle;"/>
-                            </td>
                             <td rowspan="2" style="padding:0px 10px;">
                                 <img src="{{offer.referent.company.logoLink}}" height="48" width="48" style="vertical-align: middle;"/>
                             </td>
                             <td style="vertical-align: middle;">
                                 <strong style="font-size:18px;">{{offer.label}}</strong>
+                            </td>
+                            <td rowspan="2">
+                                <div class="apply">
+                                    <button class="buttonApply" type="submit">Postuler</button>
+                                </div>
                             </td>
                         </tr>
                         <tr>

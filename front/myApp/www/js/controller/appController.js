@@ -1,5 +1,5 @@
 angular.module('app.controllers', [])
-.controller('AppController', function($scope, $ionicModal, $http) {
+.controller('AppController', function($scope, $ionicModal, $http, $state, $rootScope) {
 
     // With the new view caching in Ionic, Controllers are only called
     // when they are recreated or on app start, instead of every page change.
@@ -7,7 +7,10 @@ angular.module('app.controllers', [])
     // listen for the $ionicView.enter event:
     //$scope.$on('$ionicView.enter', function(e) {
     //});
-
+    
+    // Define global variable for offers added to cart
+    $rootScope.cartOffers = [];
+    
     // Form data for the login modal
     $scope.loginViewModel = {};
     //$scope.serverURL = "http://163.172.188.205:3000";
@@ -144,6 +147,6 @@ angular.module('app.controllers', [])
     
     // Show current user cart
     $scope.showCart = function () {
-        alert("ShowCart !");
-    }; 
+        $state.go('app.cart');
+    };  
 });
