@@ -125,6 +125,13 @@ exports.findAlltrainneraccount = function(req, res) {
 	});
 };
 
+exports.findOnetrainneraccount = function(req, res) {
+  trainneraccountModel.findOne({ login: req.params.login, password: req.params.password }, function (err, user) {
+    if(err) return next(err);
+    res.json(user);
+  });
+}
+
 exports.addtrainneraccount = function(req, res) {
     trainneraccountModel.create(req.body, function (err, post) {
     if (err) return next(err);
