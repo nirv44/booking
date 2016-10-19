@@ -17,12 +17,12 @@ angular.module('app.controllers')
             },
             currentApply: {
                 state: 1,
-                stateLabel: 'disponible'
+                stateLabel: 'available'
             },
             applies: [
                 {
                     state: 1,
-                    stateLabel: 'disponible'
+                    stateLabel: 'available'
                 }
             ]
         },
@@ -41,12 +41,12 @@ angular.module('app.controllers')
             },
             currentApply: {
                 state: 1,
-                stateLabel: 'refuse'
+                stateLabel: 'refused'
             },
             applies: [
                 {
                     state: 1,
-                    stateLabel: 'refuse'
+                    stateLabel: 'refused'
                 }
             ]
         },
@@ -65,12 +65,12 @@ angular.module('app.controllers')
             },
             currentApply: {
                 state: 1,
-                stateLabel: 'postule'
+                stateLabel: 'applied'
             },
             applies: [
                 {
                     state: 1,
-                    stateLabel: 'postule'
+                    stateLabel: 'applied'
                 }
             ]
         },
@@ -89,12 +89,12 @@ angular.module('app.controllers')
             },
             currentApply: {
                 state: 1,
-                stateLabel: 'disponible'
+                stateLabel: 'available'
             },
             applies: [
                 {
                     state: 1,
-                    stateLabel: 'disponible'
+                    stateLabel: 'available'
                 }
             ]
         },
@@ -113,12 +113,12 @@ angular.module('app.controllers')
             },
             currentApply: {
                 state: 1,
-                stateLabel: 'valide'
+                stateLabel: 'valid'
             },
             applies: [
                 {
                     state: 1,
-                    stateLabel: 'valide'
+                    stateLabel: 'valid'
                 }
             ]
         },
@@ -137,12 +137,12 @@ angular.module('app.controllers')
             },
             currentApply: {
                 state: 1,
-                stateLabel: 'postule'
+                stateLabel: 'applied'
             },
             applies: [
                 {
                     state: 1,
-                    stateLabel: 'postule'
+                    stateLabel: 'applied'
                 }
             ]
         }

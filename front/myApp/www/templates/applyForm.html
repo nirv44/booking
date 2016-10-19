@@ -1,0 +1,24 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class="title">Candidature</h1>
+    </ion-header-bar>
+    <ion-content>
+        <form ng-submit="doApply()">
+            <div class="list">
+                <label class="item item-input">
+                    <span class="input-label">CV</span>
+                    <input type="file" ng-model="applyFormViewModel.curriculumFile">
+                </label>
+                
+                <label class="item item-input">
+                    <span class="input-label">Lettre de motivation</span>
+                    <input type="file" ng-model="applyFormViewModel.motivationLetterFile">
+                </label>
+                
+                <label class="item">
+                    <button class="button button-block button-positive" type="submit">Envoyer la candidature</button>
+                </label>
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>

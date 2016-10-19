@@ -48,23 +48,101 @@ angular.module('app.controllers', [])
         $http(req).then(
             function(response){
                 if(response.data != null){
-                    $scope.modal.hide();
+                   
                 }
             }, 
             function(response){
                 console.log(response);
             }
         );
+         $scope.modal.hide();
     };
     
     $scope.formInscription = function() {
         $scope.subscribeModal.show();
     };
 
+    subscribeTraineeTojson = function(inscription){
+        return JSON.stringify({
+            mail: inscription.mail,
+            login: inscription.username, 
+            password: inscription.password, 
+            lastName: inscription.name,
+            firstName: inscription.firstName
+        });
+    }
+
+    subscribeCompanyaccountTojson = function(inscription, idCompany){
+        return JSON.stringify({
+            mail: inscription.mail,
+            login: inscription.username, 
+            password: inscription.password, 
+            lastName: inscription.name,
+            firstName: inscription.firstName,
+            idCompany: idCompany
+        });
+    }
+
+// atente de mise a jour
+    subscribeCompanyToJson = function(inscription){
+        return JSON.stringify({
+            grade: "",
+            comment: "" 
+        });
+    }
+
     // Perform the subscripe action when the user submits the subscribe form
     $scope.doSubscribe = function() {
+
+        if(subscribeViewModel.isTrainee == true){
+            var req = {
+                method: 'POST',
+                url: $scope.serverURL+'/trainneraccount',
+                data: subscribeTraineeTojson($scope.subscribeViewModel)
+            }
+            $http(req).then(
+                function(response){
+
+                }, function(response){
+
+                }
+            );
+        }else{
+            // insert company
+            var req1 = {
+                method: 'POST',
+                url: $scope.serverURL+'/company',
+                data : subscribeCompanyToJson($scope.subscribeViewModel)
+            }
+            $http(req1).then(
+                // Si company bien insérer on prend l'id pour le liée au company account
+                function(response){
+                    var req2 = {
+                        method: 'POST',
+                        url: $scope.serverURL+'/companyaccount',
+                        data: subscribeCompanyaccountTojson($scope.subscribeViewModel, response.data.idCompany)
+                    }
+                    $http(req).then(
+                        function(response){
+                            $scope.subscribeModal.hide();
+                        }, function(response){
+
+                        }
+                    );
+
+                }, function(response){
+
+                }
+            );
+
+            
+        }
+
+
+       
+
+
         console.log('Subscribe : ', $scope.subscribeViewModel);
-        $scope.subscribeModal.hide();
     };
     
     // Show current user cart
