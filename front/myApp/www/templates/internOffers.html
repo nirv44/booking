@@ -1,0 +1,9 @@
+<ion-view view-title="Offres de stage">
+    <ion-content>
+        <ion-list>
+            <ion-item ng-repeat="offer in offers" href="#/app/offers/{{offer.id}}">
+                {{offer.title}}
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
