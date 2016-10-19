@@ -36,3 +36,26 @@ button.ion-navicon {
 .no-border {
     border: 0px !important;
 }
+
+.full-width {
+    width: 100% !important;
+}
+
+.middle-valign {
+    vertical-align: middle;
+}
+
+.width-100 {
+    width: 100px;
+}
+.width-68 {
+    width: 68px;
+}
+
+.hpad-10 {
+    padding: 0px 10px;
+}
+
+.font-18 {
+    font-size: 18px;
+}
