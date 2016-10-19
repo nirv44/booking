@@ -37,7 +37,28 @@ app.get('/newsletterfilter', bdd.findAllnewsletterFilter);
 app.post('/newsletterfilter', bdd.addnewsletterFilter);
 
 
+app.get('/trainneraccount', bdd.findAlltrainneraccount);
 app.post('/trainneraccount', bdd.addtrainneraccount);
+
+
+app.get('/companyaccount', bdd.findAllcompanyaccount);
+app.post('/companyaccount', bdd.addcompanyaccount);
+
+app.get('/apply', bdd.findAllapply);
+app.post('/apply', bdd.addapply);
+
+
+app.get('/stateinternoffer', bdd.findAllstateinternoffer);
+app.post('/stateinternoffer', bdd.addstateinternoffer);
+
+
+app.get('/notice', bdd.findAllnotice);
+app.post('/notice', bdd.addnotice);
+
+
+app.get('/company', bdd.findAllcompany);
+app.post('/company', bdd.addcompany);
+
 
 
 app.listen(3000);
