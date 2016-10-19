@@ -1,0 +1,13 @@
+/** Style pour le header des modal **/
+.modal .bar-header {
+    background-color: #0B7892 !important;
+}
+.modal .bar-header .title  {
+    color: white !important;
+}
+
+/** Style pour le corps des modal **/
+.modal ion-content,
+.modal .item {
+    background-color: #ecf0f5 !important;
+}
