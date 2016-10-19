@@ -37,23 +37,20 @@ angular.module('app.controllers', [])
 
     // Perform the login action when the user submits the login form
     $scope.doLogin = function() {
-        
         var req = {
             method: 'POST',
             url: $scope.serverURL+'/trainneraccount',
             headers: {'Content-Type': 'application/json'},
             data: JSON.stringify({ login: "test", password: "test",lastName: "test",firstName: "test"})
         };
-
-        $http(req).then(
-            function(response){
-                console.log("ok");
-            }, 
-            function(response){
-                console.log(response);
-            }
-        );
-
+        $http(req)
+        .then(function(response){
+            console.log("ok");
+            console.log(response);
+        }, 
+        function(response){
+            console.log(response);
+        });
         $scope.modal.hide();
     };
     
@@ -66,5 +63,9 @@ angular.module('app.controllers', [])
         console.log('Subscribe : ', $scope.subscribeViewModel);
         $scope.subscribeModal.hide();
     };
-
+    
+    // Show current user cart
+    $scope.showCart = function () {
+        alert("ShowCart !");
+    };  
 });

@@ -14,11 +14,11 @@ angular.module('app.controllers')
                     logoLink: 'http://3.bp.blogspot.com/-6AOA3ACYmos/UPZGQCqEwYI/AAAAAAAAVnM/91uDFflFQEs/s1600/CGI+logo+2013.png'
                 }
             },
-            myApply: {
+            currentApply: {
                     state: 1,
                     stateLabel: 'disponible'
             },
-            apply: [
+            applies: [
                 {
                     state: 1,
                     stateLabel: 'disponible'
@@ -37,11 +37,11 @@ angular.module('app.controllers')
                     logoLink: 'https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAYOAAAAJGZmODE5NzgwLTIxODgtNDMwZi05YmY5LWI2NjU1NzgwNmU3NQ.png'
                 }
             },
-            myApply: {
+            currentApply: {
                     state: 1,
                     stateLabel: 'refuse'
             },
-            apply: [
+            applies: [
                 {
                     state: 1,
                     stateLabel: 'refuse'
@@ -60,11 +60,11 @@ angular.module('app.controllers')
                     logoLink: 'http://www.handi-numerique.com/sites/default/files/styles/medium/public/entreprises/capgemini_0.png?itok=jf_C1jbu'
                 }
             },
-            myApply: {
+            currentApply: {
                     state: 1,
                     stateLabel: 'postule'
             },
-            apply: [
+            applies: [
                 {
                     state: 1,
                     stateLabel: 'postule'
@@ -83,11 +83,11 @@ angular.module('app.controllers')
                     logoLink: 'https://upload.wikimedia.org/wikipedia/fr/1/16/Logo_Atos_600x424.jpg'
                 }
             },
-            myApply: {
+            currentApply: {
                     state: 1,
                     stateLabel: 'disponible'
             },
-            apply: [
+            applies: [
                 {
                     state: 1,
                     stateLabel: 'disponible'
@@ -106,11 +106,11 @@ angular.module('app.controllers')
                     logoLink: 'https://www.wired.com/wp-content/uploads/2015/09/google-logo-1200x630.jpg'
                 }
             },
-            myApply: {
+            currentApply: {
                     state: 1,
                     stateLabel: 'valide'
             },
-            apply: [
+            applies: [
                 {
                     state: 1,
                     stateLabel: 'valide'
@@ -129,11 +129,11 @@ angular.module('app.controllers')
                     logoLink: 'http://logok.org/wp-content/uploads/2014/03/Accenture-logo-1024x768.png'
                 }
             },
-            myApply: {
+            currentApply: {
                     state: 1,
                     stateLabel: 'postule'
             },
-            apply: [
+            applies: [
                 {
                     state: 1,
                     stateLabel: 'postule'
