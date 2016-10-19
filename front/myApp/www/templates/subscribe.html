@@ -1,0 +1,78 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class="title">Inscription</h1>
+    </ion-header-bar>
+    <ion-content>
+        <form ng-submit="doSubscribe()">
+            <div class="list">
+                <ion-toggle ion-toggle-text ng-checked="subscribeViewModel.isTrainee" ng-model="subscribeViewModel.isTrainee">
+                    <b class="input-label">{{subscribeViewModel.isTrainee ? "Stagiaire" : "Entreprise"}}</b>
+                </ion-toggle>
+                
+                <label class="item item-input">
+                    <b class="input-label">Login</b>
+                    <input type="text" ng-model="subscribeViewModel.username">
+                </label>
+                <label class="item item-input">
+                    <b class="input-label">Mot de passe</b>
+                    <input type="password" ng-model="subscribeViewModel.password">
+                </label>
+                <label class="item item-input">
+                    <b class="input-label">Mail</b>
+                    <input type="text" ng-model="subscribeViewModel.mail">
+                </label>
+                
+                <div ng-if="subscribeViewModel.isTrainee">
+                    <label class="item item-input">
+                        <b class="input-label">Nom</b>
+                        <input type="text" ng-model="subscribeViewModel.name">
+                    </label>
+                    <label class="item item-input">
+                        <b class="input-label">Prénom</b>
+                        <input type="text" ng-model="subscribeViewModel.firstname">
+                    </label>
+                </div>
+                
+                <div ng-if="!subscribeViewModel.isTrainee">
+                    <label class="item item-input">
+                        <b class="input-label">Nom entreprise</b>
+                        <input type="text" ng-model="subscribeViewModel.nameCompany">
+                    </label>
+                    <label class="item item-input">
+                        <b class="input-label">Adresse</b>
+                        <input type="text" ng-model="subscribeViewModel.location">
+                    </label>
+                    <label class="item item-input">
+                        <b class="input-label">Description</b>
+                        <input type="text" ng-model="subscribeViewModel.description">
+                    </label>
+                    <label class="item item-input">
+                        <b class="input-label">Chiffre d'affaires</b>
+                        <input type="text" ng-model="subscribeViewModel.turnover">
+                    </label>
+                    <label class="item item-input">
+                        <b class="input-label">Type</b>
+                        <input type="text" ng-model="subscribeViewModel.type">
+                    </label>
+                    <label class="item item-input">
+                        <b class="input-label">Nombre d'employés</b>
+                        <input type="text" ng-model="subscribeViewModel.numberEmployees">
+                    </label>
+                    <label class="item item-input">
+                        <b class="input-label">Site web</b>
+                        <input type="text" ng-model="subscribeViewModel.website">
+                    </label>
+                    <label class="item item-input">
+                        <b class="input-label">Date de création</b>
+                        <input type="text" ng-model="subscribeViewModel.creationDate">
+                    </label>
+                </div>
+                
+                
+                <label class="item">
+                    <button class="button button-block button-positive" type="submit">Enregistrer</button>
+                </label>
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>

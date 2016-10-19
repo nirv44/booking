@@ -11,14 +11,23 @@ angular.module('app.controllers', [])
     // Form data for the login modal
     $scope.loginViewModel = {};
     //$scope.serverURL = "http://163.172.188.205:3000";
-
     $scope.serverURL = "http://127.0.0.1:3000";
+
+    // Form data for the login modal
+    $scope.subscribeViewModel = {};
+
     // Create the login modal that we will use later
     $ionicModal.fromTemplateUrl('templates/login.html', {
         scope: $scope
     }).then(function(modal) {
         $scope.modal = modal;
         $scope.modal.show();
+    });
+    
+    $ionicModal.fromTemplateUrl('templates/subscribe.html', {
+        scope: $scope
+    }).then(function(modal) {
+        $scope.subscribeModal = modal;
     });
 
     // Open the login modal
@@ -43,13 +52,20 @@ angular.module('app.controllers', [])
                 console.log(response);
             }
         );
-
+    };
+    
+    $scope.formInscription = function() {
+        $scope.subscribeModal.show();
     };
 
-
-    $scope.formInscription = function() {
-        
-    }
-
-
+    // Perform the subscripe action when the user submits the subscribe form
+    $scope.doSubscribe = function() {
+        console.log('Subscribe : ', $scope.subscribeViewModel);
+        $scope.subscribeModal.hide();
+    };
+    
+    // Show current user cart
+    $scope.showCart = function () {
+        alert("ShowCart !");
+    }; 
 });
