@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParser  = require('body-parser');
 
+var bdd = require('./bdd');
 
 var app = express();
 
@@ -21,6 +22,19 @@ app.options('/api/*', function (request, response, next) {
     response.send();
 });
 
+
+app.get('/internoffer', bdd.findAllInternOffer);
+app.post('/internoffer', bdd.addInternOffer);
+
+app.get('/criteriafav', bdd.findAllCriteriaFav);
+app.post('/criteriafav', bdd.addCriteriaFav);
+
+app.get('/newsletterfilter', bdd.findAllnewsletterFilter);
+app.post('/newsletterfilter', bdd.addnewsletterFilter);
+
+
+app.get('/newsletterfilter', bdd.findAllnewsletterFilter);
+app.post('/newsletterfilter', bdd.addnewsletterFilter);
 
 app.listen(3000);
 console.log('Listening on port 3000...');
