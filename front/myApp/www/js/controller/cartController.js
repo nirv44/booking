@@ -14,21 +14,21 @@ angular.module('app.controllers')
     });
     
     // Open apply form
-    $scope.apply = function() {
+    $scope.apply = function(id) {
+        $scope.applyForm.offerId = id;
         $scope.applyForm.show();
     };
     
     // Launch user appliance to current 
     $scope.doApply = function() {
-        console.log("Apply form : ", $scope.applyFormViewModel);
+        $scope.removeOffer($scope.applyForm.offerId);
         $scope.applyForm.hide();
     };
     
     // Remove offer from user's cart
     $scope.removeOffer = function(id) {
-        $rootScope.cartOffers = $filter("filter")($rootScope.cartOffers, { id:id });
+        var offerToRemove = $filter("filter")($rootScope.cartOffers, { id:id });
         var offerIndex = $rootScope.cartOffers.indexOf(offerToRemove);
-        $rootScope.cartOffers.splice(offerIndex, 1);  
-        console.log(offerToRemove);  
+        $rootScope.cartOffers.splice(offerIndex, 1);
     };
 });

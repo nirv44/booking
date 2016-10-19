@@ -21,12 +21,12 @@ angular.module('app.controllers')
         },
         currentApply: {
             state: 1,
-            stateLabel: 'disponible'
+            stateLabel: 'available'
         },
         applies: [
             {
                 state: 1,
-                stateLabel: 'disponible'
+                stateLabel: 'available'
             }
         ]
     };
