@@ -2,11 +2,11 @@
     <ion-content>
         <ion-list>
             <ion-item ng-repeat="offer in offers">
-                <table>
+                <table style="width:100%;">
                     <tbody>
                         <tr>
-                            <td rowspan="2" style="padding:0px 10px;">
-                                <img src="{{offer.referent.company.logoLink}}" height="48" width="48" style="vertical-align: middle;"/>
+                            <td rowspan="2" style="padding:0px 10px;width:68px;">
+                                <img src="/img/delete.png" height="32" width="32" ng-click="removeOffer({{offer.id}})"/>
                             </td>
                             <td style="vertical-align: middle;">
                                 <strong style="font-size:18px;">{{offer.label}}</strong>
@@ -19,6 +19,7 @@
                         </tr>
                         <tr>
                             <td style="vertical-align: top;">
+                                <img src="{{offer.referent.company.logoLink}}" height="24" width="24" style="vertical-align: middle;"/>
                                 <span>{{offer.referent.company.name}} - {{offer.duration}}</span>
                             </td>
                         </tr>
