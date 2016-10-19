@@ -1,5 +1,5 @@
 angular.module('app.controllers', [])
-.controller('AppController', function($scope, $ionicModal,$state) {
+.controller('AppController', function($scope, $ionicModal, $http) {
 
     // With the new view caching in Ionic, Controllers are only called
     // when they are recreated or on app start, instead of every page change.
@@ -14,6 +14,7 @@ angular.module('app.controllers', [])
     // Form data for the login modal
     $scope.subscribeViewModel = {};
 
+    $scope.serverURL = "http://163.172.188.205:3000";
 
     // Create the login modal that we will use later
     $ionicModal.fromTemplateUrl('templates/login.html', {
@@ -36,13 +37,29 @@ angular.module('app.controllers', [])
 
     // Perform the login action when the user submits the login form
     $scope.doLogin = function() {
-        console.log('Logged in : ', $scope.loginViewModel);
+        
+        var req = {
+            method: 'POST',
+            url: $scope.serverURL+'/trainneraccount',
+            headers: {'Content-Type': 'application/json'},
+            data: JSON.stringify({ login: "test", password: "test",lastName: "test",firstName: "test"})
+        };
+
+        $http(req).then(
+            function(response){
+                console.log("ok");
+            }, 
+            function(response){
+                console.log(response);
+            }
+        );
+
         $scope.modal.hide();
     };
     
     $scope.formInscription = function() {
         $scope.subscribeModal.show();
-    }
+    };
 
     // Perform the subscripe action when the user submits the subscribe form
     $scope.doSubscribe = function() {

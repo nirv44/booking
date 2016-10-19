@@ -1,15 +1,18 @@
 <ion-view view-title="Offres de stage">
+    <ion-nav-buttons side="right">
+        <img src="/img/aide.png" height="24" width="24" style="margin:5px;"/>
+    </ion-nav-buttons>
     <ion-content>
         <ion-list>
             <ion-item ng-repeat="offer in offers" href="#/app/offers/{{offer.id}}">
                 <table>
                     <tbody>
                         <tr>
-                            <td rowspan="2">
-                                <img src="{{offer.apply.state}}" height="64" width="64" style="vertical-align: middle;"/>
+                            <td rowspan="2" style="padding:0px 30px 0px 0px;">
+                                <img src="/img/{{offer.myApply.stateLabel}}.png" height="48" width="48" style="vertical-align: middle;"/>
                             </td>
                             <td rowspan="2" style="padding:0px 10px;">
-                                <img src="{{offer.referent.company.logoLink}}" height="64" width="64" style="vertical-align: middle;"/>
+                                <img src="{{offer.referent.company.logoLink}}" height="48" width="48" style="vertical-align: middle;"/>
                             </td>
                             <td style="vertical-align: middle;">
                                 <strong style="font-size:18px;">{{offer.label}}</strong>

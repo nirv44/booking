@@ -6,9 +6,9 @@ mongo.Promise = global.Promise;
 
 
 // connect to MongoDB
-mongo.connect('mongodb://127.0.0.1/booking')
-	.then(() =>  console.log('connection succesful'))
-	.catch((err) => console.error(err));
+mongo.connect('mongodb://127.0.0.1/booking');
+	//.then(() =>  console.log('connection succesful'))
+	//.catch((err) => console.error(err));
 
 
 
@@ -124,6 +124,13 @@ exports.findAlltrainneraccount = function(req, res) {
     	res.json(post);
 	});
 };
+
+exports.findOnetrainneraccount = function(req, res) {
+  trainneraccountModel.findOne({ login: req.params.login, password: req.params.password }, function (err, user) {
+    if(err) return next(err);
+    res.json(user);
+  });
+}
 
 exports.addtrainneraccount = function(req, res) {
     trainneraccountModel.create(req.body, function (err, post) {

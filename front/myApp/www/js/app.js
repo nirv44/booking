@@ -29,6 +29,14 @@ angular.module('app', ['ionic', 'app.controllers'])
             }
         }
     })
+    .state('app.compte  ', {
+        url: '/compte',
+        views: {
+            'mainContent': {
+                templateUrl: 'templates/compteStagiaire.html'
+            }
+        }
+    })
     .state('app.offers', {
         url: '/offers',
         views: {
