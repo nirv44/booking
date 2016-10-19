@@ -1,7 +1,16 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
+function SubscribeViewModel () {
+    this.isTrainee = ""; 
+    this.username = ""; 
+    this.password = ""; 
+    this.mail = ""; 
+    this.name = ""; 
+    this.firstname = ""; 
+    this.nameCompany = ""; 
+    this.location = ""; 
+    this.description = ""; 
+    this.turnover = ""; 
+    this.type = ""; 
+    this.numberEmployees = "";
+    this.website = "";
+    this.creationDate = "";
+}

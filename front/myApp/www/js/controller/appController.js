@@ -145,6 +145,11 @@ angular.module('app.controllers', [])
         console.log('Subscribe : ', $scope.subscribeViewModel);
     };
     
+    // Cancel the inscription form
+    $scope.doSubscribeCancel = function () {
+        $scope.subscribeModal.hide();
+    };  
+    
     // Show current user cart
     $scope.showCart = function () {
         $state.go('app.cart');
