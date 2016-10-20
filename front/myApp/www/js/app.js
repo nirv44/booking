@@ -21,23 +21,6 @@ angular.module('app', ['ionic', 'app.controllers'])
         templateUrl: 'templates/menu.html',
         controller: 'AppController'
     })
-    .state('app.compte  ', {
-        url: '/compte',
-        views: {
-            'mainContent': {
-                templateUrl: 'templates/compteStagiaire.html'
-            }
-        }
-    })
-    .state('app.compte', {
-        url: '/offers/:offerId',
-        views: {
-            'mainContent': {
-                templateUrl: 'templates/myAccount.html',
-                controller: 'myAccountController'
-            }
-        }
-    })
     .state('app.offers', {
         url: '/offers',
         views: {
