@@ -2,11 +2,7 @@ angular.module('app.controllers')
 .controller('InternOffersController', function($scope, $ionicModal, $http, $rootScope) {
     
     // ViewModel for filterModal
-    $scope.filterViewModel = {};
-
-        
-    // Mock offers
-    var mockOffers = [
+    $scope.filterViewModel = [
         {
             "label": "Développeur",
             "earning": "10K€",
@@ -28,8 +24,7 @@ angular.module('app.controllers')
         }   
     ];
     
-
-    
+    // Load offer list
     $http({
         method: 'GET',
         url: $rootScope.serverURL + '/internoffer',
@@ -42,7 +37,6 @@ angular.module('app.controllers')
         }, 
         function(response){
             console.log("Error InternOffersController.GetOffers : " + response);
-            $scope.offers = mockOffers;
         }
     );
     
@@ -65,8 +59,23 @@ angular.module('app.controllers')
     
     // Filter offer list 
     $scope.doFilterOffer = function() {
+        // Get offer list filtered
+        $http({
+            method: 'GET',
+            url: $rootScope.serverURL + '/filterInternoffer/' + $scope.filterViewModel,
+            headers: {'Content-Type': 'application/json'}
+        }).then(
+            function(response){
+                if(response.data !== null){
+                    $scope.offers = response.data;
+                }
+            }, 
+            function(response){
+                console.log("Error InternOffersController.GetOffers : " + response);
+            }
+        );
+        // Hide filter modal
         $scope.filterOfferModal.hide();
-        // TODO [AVAN] : Launch filtering
     };
     
 });

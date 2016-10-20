@@ -3,7 +3,7 @@
         <img class="search-btn" src="/img/search.png" ng-click="filterOffer()" height="30" width="30"/>
         <span class="font-16">Filtrer les offres</span>
         <ion-list class="offer-list">
-            <ion-item ng-repeat="offer in offers" href="#/app/offers/{{offer.id}}">
+            <ion-item ng-repeat="offer in offers" href="#/app/offers/{{offer._id}}">
                 <table>
                     <tbody>
                         <tr>
@@ -16,7 +16,7 @@
                         </tr>
                         <tr>
                             <td class="middle-valign">
-                                <img class="middle-valign" src="{{offer.referent.company.logoLink}}" height="24" width="24"/>
+                                <img class="middle-valign" src="{{offer.referent.logoLink}}" height="24" width="24"/>
                                 <span>{{offer.referent.company.name}} - {{offer.duration}}</span>
                             </td>
                         </tr>

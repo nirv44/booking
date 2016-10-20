@@ -39,26 +39,42 @@ angular.module('app.controllers', [])
 
     // Perform the login action when the user submits the login form
     $scope.doLogin = function() {
-        var req = {
-            method: 'GET',
-            url: $rootScope.serverURL + '/trainneraccount/'+$scope.loginViewModel.username+'/'+$scope.loginViewModel.password,
-            headers: {'Content-Type': 'application/json'}
-        };
-        $http(req).then(
-            function(response){
-                if(response.data !== null){
-                   // LA ICI C'est bien un trainees
-                }else{
 
+        if ($scope.loginViewModel.username !== "" && $scope.loginViewModel.password !== "") {
+            $http({
+                method: 'GET',
+                url: $rootScope.serverURL + '/trainneraccount/' + $scope.loginViewModel.username + '/' + $scope.loginViewModel.password,
+                headers: {'Content-Type': 'application/json'}
+            }).then(
+                function(response){
+                    if(response.data !== null){
+                        // SI on trouve pas dans trainee on chercher dans company
+                        $http({
+                            method: 'GET',
+                            url: $rootScope.serverURL + '/trainneraccount/' + $scope.loginViewModel.username + '/' + $scope.loginViewModel.password,
+                            headers: {'Content-Type': 'application/json'}
+                        }).then(
+                            function(responsed){
+                                if(responsed !== null){
+                                    $rootScope.user = responsed.data;
+                                    $rootScope.user.isTrainee = false;
+                                }
+                            }, function(responsed){
 
+                            }
+                        );    
 
+                        $scope.modal.hide();
+                    }else{
+                        $rootScope.user = response.data;
+                        $rootScope.user.isTrainee = true;
+                    }
+                }, 
+                function(response){
+                    console.log(response);
                 }
-            }, 
-            function(response){
-                console.log(response);
-            }
-        );
-        $scope.modal.hide();
+            );
+        }
     };
     
     subscribeTraineeTojson = function(inscription){

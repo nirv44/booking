@@ -2,7 +2,6 @@ angular.module('app.controllers')
 .controller('CompanyAccountController', function($scope, $stateParams) {
 
     // Mock
-    console.log('test');
     $scope.company = {
         id: 1,
         nameCompany: 'CGI',
