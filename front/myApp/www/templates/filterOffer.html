@@ -4,14 +4,18 @@
         <form ng-submit="doFilterOffer()">
             <div class="list no-border">
                 <label class="item item-input no-border">
-                    <span class="input-label">Filtre 1</span>
-                    <input type="text" ng-model="filterViewModel.filtre1">
+                    <span class="input-label">Intitulé</span>
+                    <input type="text" ng-model="filterViewModel.label">
                 </label>
                 
-                <br/>
                 <label class="item item-input no-border">
-                    <span class="input-label">Filtre 2</span>
-                    <input type="text" ng-model="filterViewModel.filtre2">
+                    <span class="input-label">Situation géographique</span>
+                    <input type="text" ng-model="filterViewModel.location">
+                </label>
+                
+                <label class="item item-input no-border">
+                    <span class="input-label">Entreprise</span>
+                    <input type="text" ng-model="filterViewModel.referent.name">
                 </label>
                 
                 <label class="item no-border">
