@@ -164,7 +164,7 @@ angular.module('app.controllers')
         }
     ];
     
-    // 
+    // Load current company offers
     $http({
         method: 'GET',
         url: $rootScope.serverURL + '/internoffer/company/' + $rootScope.user.name,
@@ -172,8 +172,6 @@ angular.module('app.controllers')
     }).then(
         function(response){
             if(response.data !== null){
-                console.log(response.data);
-                //declar the offer
                 $scope.companyOffers = response.data;
             }
         }, 

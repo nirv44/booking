@@ -1,3 +1,5 @@
+/* global StatusBar, cordova */
+
 angular.module('app', ['ionic', 'app.controllers'])
 .run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
@@ -109,5 +111,5 @@ angular.module('app', ['ionic', 'app.controllers'])
     // ===== Help page end =====
 
     // Default url
-    $urlRouterProvider.otherwise('/app/offers');
+    //$urlRouterProvider.otherwise('/app/offers');
 });

@@ -42,14 +42,14 @@ angular.module('app.controllers', [])
                 function(response){
                     if(response.data !== null){
                         $rootScope.user = response.data;
-                        $scope.loginModal.hide();
                         $scope.loginViewModel = {};
-                        if (!$scope.user.IsTrainee) {
+                        if (!$rootScope.user.isTrainee) {
                             $state.go('app.companyAccount');
                         }
                         else {
                             $state.go('app.offers');
                         }
+                        $scope.loginModal.hide();
                     }
                 }, 
                 function(response){
@@ -130,18 +130,12 @@ angular.module('app.controllers', [])
         $state.go('app.cart');
     };
     
+    // Log out current user
     $scope.logout = function() {
         $rootScope.user = {};
         $rootScope.cartOffers = [];
         $scope.subscribeViewModel = {};
         $scope.loginViewModel = {};
-        
-        if (!$scope.user.IsTrainee) {
-            $state.go('app.companyAccount');
-        }
-        else {
-            $state.go('app.offers');
-        }
         $scope.login();
     };
 });
