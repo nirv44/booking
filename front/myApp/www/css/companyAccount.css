@@ -47,3 +47,7 @@
    color: orange;
    cursor: pointer;
 }
+
+.button-rating{
+    padding-right: 8px !important;
+}

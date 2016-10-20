@@ -13,23 +13,30 @@
     <!-- Internships Tab -->
     <ion-tab title="Mes stages" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong">
         <ion-view>
-            <ion-content>        
-                <ion-list>
-                    <ion-item ng-repeat="internship in myInternships" href="#/app/myInternships/{{internship.id}}">
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td class="middle-valign">
-                                        <img class="middle-valign" src="{{internship.referent.logoLink}}" height="50" width="50"/>
-                                    </td>
-                                    <td>
-                                        <span class="hpad-10">{{internship.referent.company.name}} - {{internship.label}}</span>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </ion-item>
-                </ion-list>
+            <ion-content>  
+                <form ng-submit="doRatingCompany()">
+                    <ion-list>
+                        <ion-item ng-repeat="internship in myInternships">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="2" class="button-rating">
+                                            <button class="button button-block button-positive" type="submit">Evaluer</button>
+                                        </td>
+                                        <td class="middle-valign">
+                                            <img class="middle-valign" src="{{internship.referent.company.logoLink}}" height="50" width="50"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="hpad-10">{{internship.referent.company.name}} - {{internship.label}}</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </ion-item>
+                    </ion-list>
+                </form>
             </ion-content>
         </ion-view>
   </ion-tab>
