@@ -1,10 +1,5 @@
 angular.module('app.controllers')
 .controller('CompanyAccountController', function($scope, $stateParams) {
-    
-    if (!$stateParams.companyId) throw new Error("No id passed to CompanyController");
-    // Récupération de l'id de l'offre en cours
-    $scope.companyId = $stateParams.companyId;
-    
     // Mock
     $scope.company = { 
         id: 1, 
