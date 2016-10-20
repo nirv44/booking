@@ -1,6 +1,28 @@
 angular.module('app.controllers')
-.controller('CompanyAccountController', function($scope, $stateParams) {
-
+.controller('CompanyAccountController', function($scope, $ionicModal, $stateParams) {
+    
+    // Form data for the login modal
+    $scope.ratingTraineeViewModel = [];
+    
+    $ionicModal.fromTemplateUrl('templates/ratingTrainee.html', {
+        scope: $scope
+    }).then(function(modal) {
+        $scope.ratingTraineeViewModel = modal;
+    });
+    
+    // Perform
+    $scope.doRatingTrainee = function() {
+        $scope.ratingTraineeViewModel.show();
+    }
+    
+    $scope.doCloseRatingTraineeForm = function() {
+        $scope.ratingTraineeViewModel.hide();
+    }
+    
+    $scope.doRateTrainee = function() {
+        $scope.ratingTraineeViewModel.hide();
+    }
+    
     // Mock
     $scope.company = {
         id: 1,

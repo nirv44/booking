@@ -1,0 +1,41 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <img class="close-btn" src="/img/close.png" ng-click="doCloseRatingTraineeForm()"/>
+        <h1 class="title">Evaluation</h1>
+    </ion-header-bar>
+    <ion-content>
+        <form ng-submit="doRateTrainee()">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <label>Note</label> :
+                            <div class="rating"><!--
+                                --><a ng-click="rate(1)">☆</a><!--
+                                --><a ng-click="rate(2)">☆</a><!--
+                                --><a ng-click="rate(3)">☆</a><!--
+                                --><a ng-click="rate(4)">☆</a><!--
+                                --><a ng-click="rate(5)">☆</a>
+                                <br />
+                                <br />
+                             </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>
+                                <label>Commentaire</label> :<br />
+                                <textarea name="commentaire" id="commentaire" rows="10" cols="50"/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="button button-block button-positive" type="submit">Enregistrer</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </ion-content>
+</ion-modal-view>
