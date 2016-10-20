@@ -47,7 +47,11 @@ angular.module('app.controllers', [])
         $http(req).then(
             function(response){
                 if(response.data !== null){
-                   
+                   // LA ICI C'est bien un trainees
+                }else{
+
+
+
                 }
             }, 
             function(response){

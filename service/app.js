@@ -50,8 +50,10 @@ app.post('/trainneraccount', bdd.addtrainneraccount);
 app.put('/trainneraccount/:id', bdd.updatetraineraccount);
 
 
+
 app.get('/companyaccount', bdd.findAllcompanyaccount);
 app.get('companyaccount/:id', bdd.findOneCompanyaccount);
+app.get('/companyaccount/:login/:password', bdd.findOneCompanyaccount);
 app.post('/companyaccount', bdd.addcompanyaccount);
 app.put('/companyaccount/:id', bdd.updatecompanyaccount);
 

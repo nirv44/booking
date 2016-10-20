@@ -187,7 +187,8 @@ var trainneraccountSchema = new mongo.Schema({
   password: String,
   studiesLevel: String,
   lastName: String,
-  firstName: String
+  firstName: String,
+  isTrainee: Boolean
 });
 
 trainneraccountModel = mongo.model('trainneraccount', trainneraccountSchema);
@@ -239,7 +240,8 @@ var companyaccountSchema = new mongo.Schema({
   type: String,
   numberEmployee: String,
   website: String,
-  creationDate: String
+  creationDate: String,
+  isTrainee: Boolean
 });
 
 companyaccountModel = mongo.model('companyaccount', companyaccountSchema);
@@ -264,6 +266,15 @@ exports.findOneCompanyaccount = function(req, res) {
     res.json(post);
   });
 }
+
+
+exports.findOneCompanyaccount = function(req, res) {
+  companyaccountModel.findOne({ login: req.params.login, password: req.params.password }, function (err, user) {
+    if(err) return next(err);
+    res.json(user);
+  });
+}
+
 
 exports.updatecompanyaccount = function(req, res) {
   companyaccountModel.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
