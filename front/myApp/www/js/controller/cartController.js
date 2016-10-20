@@ -26,9 +26,24 @@ angular.module('app.controllers')
     
     // Launch user appliance to current 
     $scope.doApply = function() {
-        $scope.removeOffer($scope.applyForm.offerId);
-        $scope.applyForm.hide();
-        // TODO [AVAN] Send appliance to server
+        $http({
+            method: 'POST',
+            url: $rootScope.serverURL + '/apply',
+            data: prepareApplianceToJson($scope.applyFormViewModel)
+        }).then(
+            function(response){
+                if (response.status == 200) {
+                    $scope.removeOffer($scope.applyForm.offerId);
+                    $scope.applyForm.hide();
+                }
+            }, function(response){
+                console.log(response);
+            }
+        );
+    };
+    
+    prepareApplianceToJson = function(data){
+        return JSON.stringify(data);
     };
     
     // Remove offer from user's cart
