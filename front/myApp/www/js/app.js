@@ -54,15 +54,6 @@ angular.module('app', ['ionic', 'app.controllers'])
             }
         }
     })
-    .state('app.myInternships', {
-        url: '/myInternships',
-        views: {
-            'mainContent': {
-                templateUrl: 'templates/myInternships.html',
-                controller: 'MyInternshipsController'
-            }
-        }
-    })
     // ===== Company account page end =====
     
     
