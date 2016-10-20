@@ -1,11 +1,11 @@
 angular.module('app.controllers')
-.controller('InternOffersController', function($scope, $ionicModal) {
+.controller('InternOffersController', function($scope, $ionicModal, $http, $rootScope) {
     
     // ViewModel for filterModal
     $scope.filterViewModel = {};
     
     // Mock offers
-    $scope.offers = [
+    var mockOffers = [
         { 
             id: 1, 
             label: 'Développeur',
@@ -151,6 +151,22 @@ angular.module('app.controllers')
             ]
         }
     ];
+    
+    $http({
+        method: 'GET',
+        url: $rootScope.serverURL + '/internoffer/',
+        headers: {'Content-Type': 'application/json'}
+    }).then(
+        function(response){
+            if(response.data !== null){
+                $scope.offers = response.data;
+            }
+        }, 
+        function(response){
+            console.log("Error InternOffersController.GetOffers : " + response);
+            $scope.offers = mockOffers;
+        }
+    );
     
     // Create the filter modal
     $ionicModal.fromTemplateUrl('templates/filterOffer.html', {
