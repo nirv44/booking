@@ -2,8 +2,9 @@ angular.module('app.controllers')
 .controller('CompanyAccountController', function($scope, $stateParams) {
 
     // Mock
-    $scope.company = { 
-        id: 1, 
+    console.log('test');
+    $scope.company = {
+        id: 1,
         nameCompany: 'CGI',
         logoLink: 'http://3.bp.blogspot.com/-6AOA3ACYmos/UPZGQCqEwYI/AAAAAAAAVnM/91uDFflFQEs/s1600/CGI+logo+2013.png',
         location: 'Nulle part',

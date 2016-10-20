@@ -14,7 +14,6 @@ angular.module('app.controllers', [])
     // Form data for the login modal
     $scope.loginViewModel = {};
     $rootScope.serverURL = "http://163.172.188.205:3000";
-    //$rootScope.serverURL = "http://127.0.0.1:3000";
 
     // Form data for the login modal
     $scope.subscribeViewModel = {};
