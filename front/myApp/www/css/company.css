@@ -3,8 +3,7 @@
 }
 
 .tableComapny tr td {
-    padding: 5px;
-    text-align: center;
+    padding: 20px;
     vertical-align: middle;
 }
 
@@ -14,7 +13,7 @@
 */
 /** Style du titre de l'offre **/
 .companyName {
-    font-size: 100px;
+    font-size: 40px;
     font-weight: bold;
     border: 0px !important;
 }
@@ -22,19 +21,15 @@
 /** Style de la div de description de l'offre' **/
 .descriptionCompany {
     text-align: justify ;
-    font-size: 40px;
+    font-size: 15px;
     line-height: 0.8;
 }
 
 /**  **/
 .bigLogoCompany{
     padding: 5px !important;
-    width: 32px;
-    height: 32px;
 }
 
-.companyHead {
-    
-    padding-bottom: 3px;
-    border-bottom: 1px #0B7892 solid;
+.companyInfos {
+    text-align: center;
 }

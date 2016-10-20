@@ -1,9 +1,9 @@
 <ion-view view-title="Entreprise">
     <ion-content>
         <table class="tableComapny">
-            <tr class="companyHead">
+            <tr>
                 <td class="bigLogoCompany">
-                    <img class="middle-valign" src="{{company.logoLink}}" height="100px" width="100px" />
+                    <img class="middle-valign" src="{{company.logoLink}}" height="40px" width="40px" />
                 </td>
                 <td class="companyName">
                     {{company.nameCompany}}
@@ -19,11 +19,11 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="2">
-                    <img src="/img/money.png" height="11" width="11"/>{{company.turnover}}
-                    <img src="/img/at.png" height="22" width="22"/>{{company.website}}
-                    <img src="/img/location.png" height="11" width="11"/>{{company.location}}
-                    <img src="/img/employee.png" height="11" width="11"/>{{company.numberEmployees}}
+                <td class="companyInfos" colspan="2">
+                    <img src="/img/money.png" height="15" width="15"/> {{company.turnover}}<br />
+                    <img src="/img/at.jpg" height="15" width="15"/> {{company.website}}<br />
+                    <img src="/img/location.png" height="15" width="15"/> {{company.location}}<br />
+                    {{company.type}} <img src="/img/employee.png" height="15" width="15"/> {{company.numberEmployees}}<br />
                 </td>
             </tr>
         </table>
