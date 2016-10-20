@@ -1,9 +1,41 @@
 <ion-tabs class="tabs-icon-top tabs-color-active-positive">
-    <!-- Main Tab -->
+
+    <!-- Main Tab `
+    3 onglets :
+    - détail de la company
+    - mes stagiaires
+    - mes offres proposées
+    -->
     <ion-tab title="Général" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear">
         <ion-nav-view name="tab-company">
             <ion-view>
                 <ion-content>
+<<<<<<< HEAD
+                  <td class="Nom">
+                      {{company.nameCompany}}
+                      console.log({{company.nameCompany}});
+                  </td>
+                  <td class="Description">
+                      {{company.description}}
+                  </td>
+                  <td class="Nombre d'employes">
+                      {{company.numberEmployees}}
+                  </td>
+                  <td class="Site internet">
+                      {{company.website}}
+                  </td>
+                </ion-content>
+            </ion-view>
+        </ion-nav-view>
+    </ion-tab>
+
+
+    <ion-tab title="Mes stagiaires" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear">
+        <ion-nav-view name="tab-company">
+            <ion-view>
+                <ion-content>
+                    test tab 1
+=======
                     <table class="tableCompany">
                         <tr>
                             <td class="bigLogoCompany">
@@ -31,13 +63,29 @@
                             </td>
                         </tr>
                     </table>
+>>>>>>> 5cf03582b698174453ca621ce6124a01ec9ccbd3
                 </ion-content>
             </ion-view>
         </ion-nav-view>
     </ion-tab>
 
-    <!-- Internships Tab -->
-    <ion-tab title="Mes stagiaires" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong">
+    <ion-tab title="Mes offres" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear">
+        <ion-nav-view name="tab-company">
+            <ion-view>
+                <ion-content>
+                    test tab 1
+                </ion-content>
+            </ion-view>
+        </ion-nav-view>
+    </ion-tab>
+
+    <!-- Internships Tab
+    3 onglets :
+      - général
+      - onglet mes stages
+      - mes candidatures
+    -->
+    <ion-tab title="Général" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong">
       <ion-nav-view name="tab-intenrships">
           <ion-view>
               <ion-content>
@@ -46,4 +94,24 @@
           </ion-view>
       </ion-nav-view>
   </ion-tab>
+
+  <ion-tab title="Mes stages" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong">
+    <ion-nav-view name="tab-intenrships">
+        <ion-view>
+            <ion-content>
+                test tab 2
+            </ion-content>
+        </ion-view>
+    </ion-nav-view>
+</ion-tab>
+
+<ion-tab title="Mes candidatures" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong">
+  <ion-nav-view name="tab-intenrships">
+      <ion-view>
+          <ion-content>
+              test tab 2
+          </ion-content>
+      </ion-view>
+  </ion-nav-view>
+</ion-tab>
 </ion-tabs>
