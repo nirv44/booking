@@ -1,18 +1,29 @@
 <ion-view view-title="Entreprise">
     <ion-content>
-        <table class="tableOffer">
-            <tr>
-                <td class="logoCompany">
-                    <img class="middle-valign" src="{{company.logoLink}}" height="100px" width="100px"/>
+        <table class="tableComapny">
+            <tr class="companyHead">
+                <td class="bigLogoCompany">
+                    <img class="middle-valign" src="{{company.logoLink}}" height="100px" width="100px" />
                 </td>
-                <td class="offerTitle">
+                <td class="companyName">
                     {{company.nameCompany}}
                 </td>
             </tr>
             <tr>
-                <td class="description">
-                    <strong>Description :</strong>
-                    {{company.description}}
+                <td class="descriptionCompany" colspan="2">
+                    <div>
+                        <br />
+                        <span>{{company.description}}</span>
+                        <br /><br />
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <img src="/img/money.png" height="11" width="11"/>{{company.turnover}}
+                    <img src="/img/at.png" height="22" width="22"/>{{company.website}}
+                    <img src="/img/location.png" height="11" width="11"/>{{company.location}}
+                    <img src="/img/employee.png" height="11" width="11"/>{{company.numberEmployees}}
                 </td>
             </tr>
         </table>

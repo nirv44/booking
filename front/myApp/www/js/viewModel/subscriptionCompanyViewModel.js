@@ -9,5 +9,4 @@ function SubscribeCompanyViewModel () {
     this.type = ""; 
     this.numberEmployees = "";
     this.website = "";
-    this.creationDate = "";
 }
