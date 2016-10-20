@@ -14,21 +14,6 @@ angular.module('app.controllers')
                 // ICI AVEC response.data y a toutes les données
                 //response.data;
 
-                // ET LA IL FAUT RECUPE LA COMPANY LI2E A LIDEE RECUP
-                var reqCompany = {
-                    method: 'GET',
-                    URL: $rootScope.serverURL+'/company/'+response.data.referent
-                }
-                $http(reqCompany).then(
-                    function(responseCompany){
-                        // Oh la j'ai la company par 
-                        //responseCompany.data;
-                    },function(responseCompany){
-
-                    });
-                // PAREIL POUR CURRENTAPPLY
-
-                // ICI PAREIL POUR LE APPLY
             }, function(response){
 
             });

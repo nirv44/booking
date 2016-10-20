@@ -33,10 +33,7 @@ app.post('/criteriafav', bdd.addCriteriaFav);
 
 
 app.get('/newsletterfilter', bdd.findAllnewsletterFilter);
-app.post('/newsletterfilter', bdd.addnewsletterFilter);
-
-
-app.get('/newsletterfilter', bdd.findAllnewsletterFilter);
+app.get('/newsletterfilter/:idtrainneraccount', bdd.findOneNewsLetterFilter);
 app.post('/newsletterfilter', bdd.addnewsletterFilter);
 
 
@@ -63,9 +60,6 @@ app.get('/notice/trainneraccount/:idtrainneraccount', bdd.findOneNoticebyIdTrain
 app.get('/notice/company/:idCompany', bdd.findOneNoticebyIdCompany);
 app.post('/notice', bdd.addnotice);
 
-
-app.get('/company', bdd.findAllcompany);
-app.post('/company', bdd.addcompany);
 
 app.get('/cart/trainneraccount/:idtraineeaccount', bdd.findOneCartbyTraineeAccount);
 app.get('/cart/internoffer/:idinternoffer', bdd.findOneCartbyInternOffer);
