@@ -62,7 +62,7 @@ angular.module('app.controllers')
         // Get offer list filtered
         $http({
             method: 'GET',
-            url: $rootScope.serverURL + '/filterInternoffer/' + $scope.filterViewModel,
+            url: $rootScope.serverURL + '/filterInternOffer/' + $scope.filterViewModel,
             headers: {'Content-Type': 'application/json'}
         }).then(
             function(response){

@@ -1,5 +1,36 @@
 <ion-view view-title="Déposer une offre">
     <ion-content>
-       
+        <form ng-submit="doPostOffer()">
+            <div class="list no-border">
+                <label class="item item-input no-border">
+                    <span class="input-label">Intitulé</span>
+                    <input type="text" ng-model="newOfferViewModel.label"/>
+                </label>
+                
+                <label class="item item-input no-border">
+                    <span class="input-label">Description</span>
+                    <textarea ng-model="newOfferViewModel.description"></textarea>
+                </label>
+                
+                <label class="item item-input no-border">
+                    <span class="input-label">Durée</span>
+                    <input type="text" ng-model="newOfferViewModel.duration"/>
+                </label>
+                
+                <label class="item item-input no-border">
+                    <span class="input-label">Adresse</span>
+                    <input type="text" ng-model="newOfferViewModel.location"/>
+                </label>
+                
+                <label class="item item-input no-border">
+                    <span class="input-label">Rémunéré</span>
+                    <input type="text" ng-model="newOfferViewModel.earning"/>
+                </label>
+                
+                <label class="item no-border">
+                    <button class="button button-block button-positive" type="submit">Ajouter l'offre</button>
+                </label>
+            </div>
+        </form>
     </ion-content>
 </ion-view>
