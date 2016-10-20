@@ -80,6 +80,7 @@ exports.findOneInternOffer = function(req, res) {
 }
 
 exports.addInternOffer = function(req, res) {
+  console.log(req.body);
     interOfferModel.create(req.body, function (err, post) {
     if (err) return next(err);
     	res.json(post);
