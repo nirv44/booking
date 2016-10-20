@@ -31,7 +31,7 @@ angular.module('app.controllers')
     };
     
     // Get detailed information of the internship offer
-    /*$http({
+    $http({
         method: 'GET',
         url: $rootScope.serverURL+'/internoffer/'+$scope.offerId,
         headers: {'Content-Type': 'application/json'}
@@ -50,5 +50,5 @@ angular.module('app.controllers')
     // Add current offer to user's cart
     $scope.addToCart = function () {
         $rootScope.cartOffers.push($scope.offer);
-    };*/
+    };
 });

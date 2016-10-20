@@ -22,3 +22,17 @@
   background-image: url('../img/trainees-off.png');
   background-size: contain;
 }
+
+.tabs .tab-item .icon.offers-on {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-image: url('../img/trainees-on.png');
+  background-size: contain;
+}
+
+.tabs .tab-item .icon.offers-off {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-image: url('../img/trainees-off.png');
+  background-size: contain;
+}

@@ -32,7 +32,7 @@ angular.module('app.controllers')
     
     // Remove offer from user's cart
     $scope.removeOffer = function(id) {
-        var offerToRemove = $filter("filter")($rootScope.cartOffers, { id:id });
+        var offerToRemove = $filter("filter")($rootScope.cartOffers, { _id:id });
         var offerIndex = $rootScope.cartOffers.indexOf(offerToRemove);
         $rootScope.cartOffers.splice(offerIndex, 1);
     };
