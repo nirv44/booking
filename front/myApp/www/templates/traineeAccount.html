@@ -4,7 +4,14 @@
         <ion-nav-view name="tab-company">
             <ion-view>
                 <ion-content>
-                    test tab 1
+                    <div class="list no-border">
+                        <label class="item item-input no-border tableTrainee">
+                            {{trainee.firstname}} {{trainee.lastname}}
+                        </label>
+                        <label class="item item-input no-border">
+                            <img src="/img/at.jpg" height="15" width="15"/> {{trainee.mail}}
+                        </label>
+                    </div>
                 </ion-content>
             </ion-view>
         </ion-nav-view>

@@ -23,6 +23,14 @@ angular.module('app.controllers')
         $scope.ratingCompanyViewModel.hide();
     }
     
+    // Mock
+    $scope.trainee = {
+        id: 1,
+        firstname: 'Toto',
+        lastname: 'Tutu',
+        mail: 'toto.tutu@croc.com'
+    };
+    
     // Mock offers
     $scope.myInternships = [
         { 
