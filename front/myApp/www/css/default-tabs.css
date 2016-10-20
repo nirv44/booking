@@ -1,0 +1,24 @@
+.tab-nav.tabs {
+    background-color: #ecf0f5 !important;
+    border: 0px;
+}
+
+.tab-item {
+    color: #4095A9 !important;
+    font-weight: bold;
+    border-color: #4095A9 !important;
+}
+
+.tabs .tab-item .icon.trainees-on {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-image: url('../img/trainees-on.png');
+  background-size: contain;
+}
+
+.tabs .tab-item .icon.trainees-off {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-image: url('../img/trainees-off.png');
+  background-size: contain;
+}
