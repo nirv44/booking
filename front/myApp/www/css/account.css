@@ -1,37 +1,41 @@
-.tableComapny {
-    width: 100%;
-}
-
-.tableCompany tr td {
+.table-company tr td {
     padding: 20px;
     vertical-align: middle;
 }
 
-/*
-    display: block;
-}
-*/
 /** Style du titre de l'offre **/
-.companyName {
+.company-name {
+    text-align: center;
     font-size: 40px;
     font-weight: bold;
-    border: 0px !important;
 }
 
 /** Style de la div de description de l'offre' **/
-.descriptionCompany {
+.company-description {
     text-align: justify ;
     font-size: 15px;
-    line-height: 0.8;
 }
 
 /**  **/
-.bigLogoCompany{
-    padding: 5px !important;
+.company-logo{
+    position: absolute;
+    top: 12px;
+    left: 12px;
 }
 
-.companyInfos {
+.company-infos {
     text-align: center;
+}
+
+
+
+.trainee-name {
+    padding: 20px;
+    font-weight: bold;
+    font-size: 30px ;
+}
+.trainee-referent-logo {
+    padding: 10px;
 }
 
 .rating a {
@@ -46,14 +50,4 @@
 .rating a:focus ~ a {
    color: orange;
    cursor: pointer;
-}
-
-.button-rating{
-    padding-right: 8px !important;
-}
-
-.tableTrainee {
-    padding: 20px;
-    font-weight: bold;
-    font-size: 30px ;
 }

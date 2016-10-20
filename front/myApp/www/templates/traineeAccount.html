@@ -8,11 +8,11 @@
             <ion-view>
                 <ion-content>
                     <div class="list no-border">
-                        <label class="item item-input no-border tableTrainee">
-                            {{trainee.firstname}} {{trainee.lastname}}
+                        <label class="item item-input no-border trainee-name">
+                            {{user.firstName}} {{user.lastName}}
                         </label>
                         <label class="item item-input no-border">
-                            <img src="/img/at.jpg" height="15" width="15"/> {{trainee.mail}}
+                            <img src="/img/at.png" height="15" width="15"/> {{user.mail}}
                         </label>
                     </div>
                 </ion-content>
@@ -26,20 +26,20 @@
             <ion-content>  
                 <form ng-submit="doRatingCompany()">
                     <ion-list>
-                        <ion-item ng-repeat="internship in myInternships">
+                        <ion-item ng-repeat="internship in internships">
                             <table>
                                 <tbody>
                                     <tr>
-                                        <td rowspan="2" class="button-rating">
+                                        <td rowspan="2" class="middle-valign">
                                             <button class="button button-block button-positive" type="submit">Evaluer</button>
                                         </td>
-                                        <td class="middle-valign">
-                                            <img class="middle-valign" src="{{internship.referent.logoLink}}" height="50" width="50"/>
+                                        <td>
+                                            <img class="middle-valign trainee-referent-logo" src="{{internship.referent.logoLink}}" height="50" width="50"/>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>
-                                            <span class="hpad-10">{{internship.referent.company.name}} - {{internship.label}}</span>
+                                        <td class="hpad-10">
+                                            <span>{{internship.referent.name}} - {{internship.label}}</span>
                                         </td>
                                     </tr>
                                 </tbody>
