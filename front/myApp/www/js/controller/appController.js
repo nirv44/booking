@@ -16,7 +16,7 @@ angular.module('app.controllers', [])
     $rootScope.serverURL = "http://163.172.188.205:3000";
 
     // Form data for the login modal
-    $scope.subscribeViewModel = {};
+    $scope.subscribeViewModel = [];
 
     // Create the login modal that we will use later
     $ionicModal.fromTemplateUrl('templates/login.html', {
@@ -54,7 +54,7 @@ angular.module('app.controllers', [])
                 console.log(response);
             }
         );
-         $scope.modal.hide();
+        $scope.modal.hide();
     };
     
     subscribeTraineeTojson = function(inscription){
@@ -67,29 +67,25 @@ angular.module('app.controllers', [])
         });
     };
 
-    subscribeCompanyaccountTojson = function(inscription, idCompany){
+    subscribeCompanyaccountTojson = function(inscription){
         return JSON.stringify({
-            mail: inscription.mail,
-            login: inscription.username, 
+            login: inscription.username,
             password: inscription.password, 
-            lastName: inscription.name,
-            firstName: inscription.firstName,
-            idCompany: idCompany
+            mail: inscription.mail, 
+            name: inscription.nameCompany,
+            description: inscription.description,
+            turnover: inscription.turnover,
+            type: inscription.type,
+            numberEmployee: inscription.numberEmployees,
+            website: inscription.website        
         });
     };
 
-// atente de mise a jour
-    subscribeCompanyToJson = function(inscription){
-        return JSON.stringify({
-            grade: "",
-            comment: "" 
-        });
-    };
 
     // Perform the subscripe action when the user submits the subscribe form
     $scope.doSubscribe = function() {
 
-        if(subscribeViewModel.isTrainee === true){
+        if($scope.subscribeViewModel.isTrainee == true){
             var req = {
                 method: 'POST',
                 url: $rootScope.serverURL+'/trainneraccount',
@@ -97,47 +93,26 @@ angular.module('app.controllers', [])
             };
             $http(req).then(
                 function(response){
-
+                    $scope.subscribeModal.hide();
                 }, function(response){
 
                 }
             );
         }else{
-            // insert company
-            var req1 = {
+            var req2 = {
                 method: 'POST',
-                url: $rootScope.serverURL+'/company',
-                data : subscribeCompanyToJson($scope.subscribeViewModel)
+                url: $rootScope.serverURL+'/companyaccount',
+                data: subscribeCompanyaccountTojson($scope.subscribeViewModel)
             };
-            $http(req1).then(
-                // Si company bien insérer on prend l'id pour le liée au company account
+            $http(req2).then(
                 function(response){
-                    var req2 = {
-                        method: 'POST',
-                        url: $rootScope.serverURL+'/companyaccount',
-                        data: subscribeCompanyaccountTojson($scope.subscribeViewModel, response.data.idCompany)
-                    };
-                    $http(req).then(
-                        function(response){
-                            $scope.subscribeModal.hide();
-                        }, function(response){
-
-                        }
-                    );
-
+                    $scope.subscribeModal.hide();
                 }, function(response){
-
+        
                 }
-            );
-
-            
+            );           
         }
 
-
-       
-
-
-        console.log('Subscribe : ', $scope.subscribeViewModel);
     };
     
     // Open the inscription form

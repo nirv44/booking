@@ -4,23 +4,6 @@ angular.module('app.controllers')
     // ViewModel for filterModal
     $scope.filterViewModel = {};
 
-
-
-    $scope.ICIJERECUPEREMESSUPPERTINTERNOFFERMAISILFAUTCHANGGERLENOMDELAFOCNTION = function(){
-        var req = {
-            method: 'GET',
-            URL: $rootScope.serverURL+'/internoffer'
-        }
-        $http(req).then(
-            function(response){
-                // ICI AVEC response.data y a toutes les données
-                //response.data;
-
-            }, function(response){
-
-            }
-        );
-    }
         
     // Mock offers
     var mockOffers = [
@@ -172,7 +155,7 @@ angular.module('app.controllers')
     
     $http({
         method: 'GET',
-        url: $rootScope.serverURL + '/internoffer/',
+        url: $rootScope.serverURL + '/internoffer',
         headers: {'Content-Type': 'application/json'}
     }).then(
         function(response){
