@@ -1,0 +1,49 @@
+<ion-tabs class="tabs-icon-top tabs-color-active-positive">
+    <!-- Main Tab -->
+    <ion-tab title="Général" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear">
+        <ion-nav-view name="tab-company">
+            <ion-view>
+                <ion-content>
+                    <table class="tableCompany">
+                        <tr>
+                            <td class="bigLogoCompany">
+                                <img class="middle-valign" src="{{company.logoLink}}" height="40px" width="40px" />
+                            </td>
+                            <td class="companyName">
+                                {{company.nameCompany}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="descriptionCompany" colspan="2">
+                                <div>
+                                    <br />
+                                    <span>{{company.description}}</span>
+                                    <br /><br />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="companyInfos" colspan="2">
+                                <img src="/img/money.png" height="15" width="15"/> {{company.turnover}}<br />
+                                <img src="/img/at.jpg" height="15" width="15"/> {{company.website}}<br />
+                                <img src="/img/location.png" height="15" width="15"/> {{company.location}}<br />
+                                {{company.type}} <img src="/img/employee.png" height="15" width="15"/> {{company.numberEmployees}}<br />
+                            </td>
+                        </tr>
+                    </table>
+                </ion-content>
+            </ion-view>
+        </ion-nav-view>
+    </ion-tab>
+
+    <!-- Internships Tab -->
+    <ion-tab title="Mes stagiaires" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong">
+      <ion-nav-view name="tab-intenrships">
+          <ion-view>
+              <ion-content>
+                  test tab 2
+              </ion-content>
+          </ion-view>
+      </ion-nav-view>
+  </ion-tab>
+</ion-tabs>

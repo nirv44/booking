@@ -1,40 +1,36 @@
-<ion-view view-title="Compte">
-    <ion-content>
-        <div>
-            <ion-tab icon-off="" icon-on="" href="">
-                
-            </ion-tab>
-        </div>
-        <ion-slide-box>
-            <ion-slide>
-                <div class="list">
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">Prénom</span>
-                        <input type="text" placeholder="John">
-                    </label>
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">Nom</span>
-                        <input type="text" placeholder="Suhr">
-                    </label>
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">Login</span>
-                        <input type="text" placeholder="John">
-                    </label>
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">Password</span>
-                        <input type="password" placeholder="Suhr">
-                    </label>
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">mail</span>
-                        <input type="text">
-                    </label>
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">niveau d'étude</span>
-                        <input type="text">
-                    </label>
-		</div>
-            </ion-slide>
-        <ion-slide>2</ion-slide>
-        </ion-slide-box>
-    </ion-content>
-</ion-view>
+<ion-tabs class="tabs-icon-top tabs-color-active-positive">
+    <!-- Main Tab -->
+    <ion-tab title="Général" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear">
+        <ion-nav-view name="tab-company">
+            <ion-view>
+                <ion-content>
+                    test tab 1
+                </ion-content>
+            </ion-view>
+        </ion-nav-view>
+    </ion-tab>
+
+    <!-- Internships Tab -->
+    <ion-tab title="Mes stages" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong">
+        <ion-view>
+            <ion-content>        
+                <ion-list>
+                    <ion-item ng-repeat="internship in myInternships" href="#/app/myInternships/{{internship.id}}">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td class="middle-valign">
+                                        <img class="middle-valign" src="{{internship.referent.company.logoLink}}" height="50" width="50"/>
+                                    </td>
+                                    <td>
+                                        <span class="hpad-10">{{internship.referent.company.name}} - {{internship.label}}</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </ion-item>
+                </ion-list>
+            </ion-content>
+        </ion-view>
+  </ion-tab>
+</ion-tabs>

@@ -1,0 +1,35 @@
+.tableComapny {
+    width: 100%;
+}
+
+.tableCompany tr td {
+    padding: 20px;
+    vertical-align: middle;
+}
+
+/*
+    display: block;
+}
+*/
+/** Style du titre de l'offre **/
+.companyName {
+    font-size: 40px;
+    font-weight: bold;
+    border: 0px !important;
+}
+
+/** Style de la div de description de l'offre' **/
+.descriptionCompany {
+    text-align: justify ;
+    font-size: 15px;
+    line-height: 0.8;
+}
+
+/**  **/
+.bigLogoCompany{
+    padding: 5px !important;
+}
+
+.companyInfos {
+    text-align: center;
+}

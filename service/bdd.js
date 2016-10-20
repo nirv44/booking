@@ -2,7 +2,7 @@
 var mongo = require('mongoose');
 
 // Use native Node promises
-mongo.Promise = global.Promise;
+//mongo.Promise = global.Promise;
 
 
 // connect to MongoDB
@@ -11,8 +11,33 @@ mongo.connect('mongodb://127.0.0.1/booking');
 	//.catch((err) => console.error(err));
 
 
+///////////////////////////////////
+/////////////////////// CARt
 
+var cartSchema = new mongo.Schema({
+	idtrainneeAccount: String,
+	idInternOffer: String
+});
+cartModel = mongo.model('cart',cartSchema);
+exports.findOneCartbyTraineeAccount = function(req, res){
+	cartModel.findOne({ idtraineeAccount: req.params.idtraineeaccount }, function (err, post) {
+	if(err) return next(err);
+		res.json(post);
+	});
+}
+exports.findOneCartbyInternOffer = function(req, res) {
+	cartModel.findOne({ idInternOffer: req.params.idinternoffer }, function (err, post){
+		if(err) return next (err);
+		res.json(post);
+	});
+}
 
+exports.addCart = function (req, res) {
+	cartModel.create(req.body, function (err, post) {
+		if(err) return next(err);
+		res.json(post);
+	});
+}
 ///////////////////////////////////
 ////////////////////// INTERN OFFER
 
@@ -20,12 +45,23 @@ var interOfferSchema = new mongo.Schema({
   label: String,
   earning: String,
   description: String,
-  referent: String // cle id company account
-
+  duration: String,
+  location: String,
+  referent: {
+    name: String,
+    logoLink: String
+  }, 
+  currentApply:{
+    state: Number,
+    stateLabel: String
+  },
+  applies: {
+    state: Number,
+    stateLabel: String
+  }
 });
 
 interOfferModel = mongo.model('interOffer', interOfferSchema);
-
 
 exports.findAllInternOffer = function(req, res) {
     interOfferModel.find(function (err, post) {
@@ -90,7 +126,8 @@ var newsletterFilterSchema = new mongo.Schema({
   location: String,
   studiesLevel: String,
   company: String,
-  skills: String
+  skills: String,
+  idtrainneraccount: String
 });
 
 newsletterFilterModel = mongo.model('NewsletterFilter', newsletterFilterSchema);
@@ -102,7 +139,12 @@ exports.findAllnewsletterFilter = function(req, res) {
     	res.json(post);
 	});
 };
-
+exports.findOneNewsLetterFilter = function(req, res) {
+  newsletterFilterModel.findOne({ idtrainneraccount: req.params.idtrainneraccount}, function (err, post){
+    if(err) return (err);
+    res.json(post);
+  })
+}
 exports.addnewsletterFilter = function(req, res) {
     newsletterFilterModel.create(req.body, function (err, post) {
     if (err) return next(err);
@@ -120,9 +162,9 @@ var trainneraccountSchema = new mongo.Schema({
   mail: String,
   login: String,
   password: String,
+  studiesLevel: String,
   lastName: String,
-  firstName: String,
-  studiesLevel: String
+  firstName: String
 });
 
 trainneraccountModel = mongo.model('trainneraccount', trainneraccountSchema);
@@ -160,11 +202,15 @@ var companyaccountSchema = new mongo.Schema({
   mail: String,
   login: String,
   password: String,
-  lastName: String,
-  firstName: String,
-  idCompany: String,
   fonction: String,
-  logoLink: String
+  logoLink: String,
+  name: String,
+  description: String,
+  turnover: String,
+  type: String,
+  numberEmployee: String,
+  website: String,
+  creationDate: String
 });
 
 companyaccountModel = mongo.model('companyaccount', companyaccountSchema);

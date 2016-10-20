@@ -14,7 +14,6 @@ angular.module('app.controllers', [])
     // Form data for the login modal
     $scope.loginViewModel = {};
     $rootScope.serverURL = "http://163.172.188.205:3000";
-    //$scope.serverURL = "http://127.0.0.1:3000";
 
     // Form data for the login modal
     $scope.subscribeViewModel = {};
@@ -42,7 +41,7 @@ angular.module('app.controllers', [])
     $scope.doLogin = function() {
         var req = {
             method: 'GET',
-            url: $scope.serverURL+'/trainneraccount/'+$scope.loginViewModel.username+'/'+$scope.loginViewModel.password,
+            url: $rootScope.serverURL + '/trainneraccount/'+$scope.loginViewModel.username+'/'+$scope.loginViewModel.password,
             headers: {'Content-Type': 'application/json'}
         };
         $http(req).then(
@@ -93,7 +92,7 @@ angular.module('app.controllers', [])
         if(subscribeViewModel.isTrainee === true){
             var req = {
                 method: 'POST',
-                url: $scope.serverURL+'/trainneraccount',
+                url: $rootScope.serverURL+'/trainneraccount',
                 data: subscribeTraineeTojson($scope.subscribeViewModel)
             };
             $http(req).then(
@@ -107,7 +106,7 @@ angular.module('app.controllers', [])
             // insert company
             var req1 = {
                 method: 'POST',
-                url: $scope.serverURL+'/company',
+                url: $rootScope.serverURL+'/company',
                 data : subscribeCompanyToJson($scope.subscribeViewModel)
             };
             $http(req1).then(
@@ -115,7 +114,7 @@ angular.module('app.controllers', [])
                 function(response){
                     var req2 = {
                         method: 'POST',
-                        url: $scope.serverURL+'/companyaccount',
+                        url: $rootScope.serverURL+'/companyaccount',
                         data: subscribeCompanyaccountTojson($scope.subscribeViewModel, response.data.idCompany)
                     };
                     $http(req).then(
