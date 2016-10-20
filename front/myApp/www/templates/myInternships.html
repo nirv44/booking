@@ -1,21 +1,15 @@
 <ion-view view-title="Mes stages">
     <ion-content>        
         <ion-list>
-            <ion-item ng-repeat="offer in offers" href="#/app/offers/{{offer.id}}">
+            <ion-item ng-repeat="internship in myInternships" href="#/app/myInternships/{{internship.id}}">
                 <table>
                     <tbody>
                         <tr>
-                            <td rowspan="2" class="right-pad-30">
-                                <img class="middle-valign" src="/img/{{offer.currentApply.stateLabel}}.png" height="48" width="48"/>
-                            </td>
                             <td class="middle-valign">
-                                <strong class="font-18">{{offer.label}}</strong>
+                                <img class="middle-valign" src="{{internship.referent.company.logoLink}}" height="50" width="50"/>
                             </td>
-                        </tr>
-                        <tr>
-                            <td class="middle-valign">
-                                <img class="middle-valign" src="{{offer.referent.company.logoLink}}" height="24" width="24"/>
-                                <span>{{offer.referent.company.name}} - {{offer.duration}}</span>
+                            <td>
+                                <span class="hpad-10">{{internship.referent.company.name}} - {{internship.label}}</span>
                             </td>
                         </tr>
                     </tbody>

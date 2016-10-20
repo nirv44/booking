@@ -1,7 +1,7 @@
 angular.module('app.controllers')
 .controller('MyInternshipsController', function($scope) {
     // Mock offers
-    $scope.offers = [
+    $scope.myInternships = [
         { 
             id: 1, 
             label: 'Développeur',
