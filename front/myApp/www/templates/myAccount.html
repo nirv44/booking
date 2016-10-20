@@ -1,0 +1,30 @@
+<ion-view view-title="Mon Compte">
+    <ion-content>
+        <table class="tableAccount">
+            <tr>
+                <td class="accountTitle">
+                    {{acount.login}}
+                </td>
+                <td class="logoUser">
+
+                </td>
+            </tr>
+            <tr>
+<!--                <td class="description">
+                    {{offer.description}}
+                </td>
+-->                <td class="applyinformations">
+                    <div class="apply">
+                        <button class="buttonApply" type="submit">Postuler</button>
+                    </div>
+                    <div class="informations">
+                        <img src="/img/earning_offer.jpg" height="11" width="11"/>     <strong>{{offer.earning}}</strong><br />
+                        <img src="/img/arobase_offer.jpg" height="11" width="11"/>     {{offer.referent}} <br />
+                        <img src="/img/location_offer.jpg" height="11" width="11"/>     {{offer.location}} <br />
+                        <img src="/img/clock_offer.jpg" height="11" width="11"/>     {{offer.duration}} <br />
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </ion-content>
+</ion-view>

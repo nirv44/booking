@@ -29,6 +29,15 @@ angular.module('app', ['ionic', 'app.controllers'])
             }
         }
     })
+    .state('app.compte', {
+        url: '/offers/:offerId',
+        views: {
+            'mainContent': {
+                templateUrl: 'templates/myAccount.html',
+                controller: 'myAccountController'
+            }
+        }
+    });
     .state('app.offers', {
         url: '/offers',
         views: {
@@ -83,7 +92,7 @@ angular.module('app', ['ionic', 'app.controllers'])
             }
         }
     });
-    
+
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/offers');
 });
