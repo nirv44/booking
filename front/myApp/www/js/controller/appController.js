@@ -39,21 +39,23 @@ angular.module('app.controllers', [])
 
     // Perform the login action when the user submits the login form
     $scope.doLogin = function() {
-        $http({
-            method: 'GET',
-            url: $rootScope.serverURL + '/trainneraccount/'+$scope.loginViewModel.username+'/'+$scope.loginViewModel.password,
-            headers: {'Content-Type': 'application/json'}
-        }).then(
-            function(response){
-                if(response.data !== null){
-                    $rootScope.user = {};
-                    $scope.modal.hide();
+        if ($scope.loginViewModel.username !== "" && $scope.loginViewModel.password !== "") {
+            $http({
+                method: 'GET',
+                url: $rootScope.serverURL + '/trainneraccount/' + $scope.loginViewModel.username + '/' + $scope.loginViewModel.password,
+                headers: {'Content-Type': 'application/json'}
+            }).then(
+                function(response){
+                    if(response.data !== null){
+                        $rootScope.user = {};
+                        $scope.modal.hide();
+                    }
+                }, 
+                function(response){
+                    console.log(response);
                 }
-            }, 
-            function(response){
-                console.log(response);
-            }
-        );
+            );
+        }
     };
     
     subscribeTraineeTojson = function(inscription){
