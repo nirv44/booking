@@ -1,7 +1,7 @@
 angular.module('app.controllers')
 .controller('InternOffersController', function($scope, $ionicModal, $http, $rootScope) {
     
-    // ViewModel for filterModal
+    // ViewModel for filter modal
     $scope.filterViewModel = {
         label: "",
         location: "",

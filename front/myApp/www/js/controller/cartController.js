@@ -28,6 +28,7 @@ angular.module('app.controllers')
     $scope.doApply = function() {
         $scope.removeOffer($scope.applyForm.offerId);
         $scope.applyForm.hide();
+        // TODO [AVAN] Send appliance to server
     };
     
     // Remove offer from user's cart

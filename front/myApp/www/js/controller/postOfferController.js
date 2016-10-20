@@ -14,6 +14,7 @@ angular.module('app.controllers')
         };
     }
     
+    // Send the new offer to server
     $scope.doPostOffer = function() {
         $http({
             method: 'POST',
@@ -25,6 +26,7 @@ angular.module('app.controllers')
                     initViewModel(); 
                 }
             }, function(response){
+                console.log(response);
             }
         );
     }

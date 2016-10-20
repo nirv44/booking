@@ -1,8 +1,6 @@
 angular.module('app.controllers')
-.controller('InternOfferController', function($http, $scope, $stateParams, $rootScope) {
-    if (!$stateParams.offerId) throw new Error("No id passed to InternOfferController");
-    
-    // Get detailed information of the internship offer/
+.controller('InternOfferController', function($http, $scope, $stateParams, $rootScope) {    
+    // Get detailed information of the internship offer
     $http({
         method: 'GET',
         url: $rootScope.serverURL + '/internoffer/' + $stateParams.offerId,
