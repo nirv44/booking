@@ -70,3 +70,8 @@ button.ion-navicon {
     background-color: #0B7892 !important;
     color: white !important;
 }
+
+.logo {
+    display: block;
+    margin: 30px auto;
+}
