@@ -37,7 +37,7 @@ angular.module('app', ['ionic', 'app.controllers'])
                 controller: 'myAccountController'
             }
         }
-    });
+    })
     .state('app.offers', {
         url: '/offers',
         views: {
