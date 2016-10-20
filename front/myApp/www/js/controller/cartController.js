@@ -37,7 +37,7 @@ angular.module('app.controllers')
                     $scope.applyForm.hide();
                 }
             }, function(response){
-                console.log(response);
+                console.log("Error CartController.Apply : ", response);
             }
         );
     };

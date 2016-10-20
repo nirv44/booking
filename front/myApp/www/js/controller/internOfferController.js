@@ -12,7 +12,7 @@ angular.module('app.controllers')
             }
         }, 
         function(response){
-            console.log("Error InternOfferController.GetOffer : " + response);
+            console.log("Error InternOfferController.GetOffer : ", response);
         }
     );
     

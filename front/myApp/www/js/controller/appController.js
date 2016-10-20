@@ -53,7 +53,7 @@ angular.module('app.controllers', [])
                     }
                 }, 
                 function(response){
-                    console.log(response);
+                    console.log("Error AppController.Login : ", response);
                 }
             );
         }
@@ -95,7 +95,7 @@ angular.module('app.controllers', [])
                     $scope.subscribeModal.hide();
                     $scope.subscribeViewModel = {};
                 }, function(response){
-                    console.log(response);
+                    console.log("Error AppController.SubscribeTrainee : ", response);
                 }
             );
         } else {
@@ -108,7 +108,7 @@ angular.module('app.controllers', [])
                     $scope.subscribeModal.hide();
                     $scope.subscribeViewModel = {};
                 }, function(response){
-                    console.log(response);
+                    console.log("Error AppController.SubscribeCompany : ", response);
                 }
             );           
         }

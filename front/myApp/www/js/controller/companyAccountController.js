@@ -176,7 +176,7 @@ angular.module('app.controllers')
             }
         }, 
         function(response){
-            console.log(response);
+            console.log("Error CompanyAccountController.LoadOffers : ", response);
         }
     );
 });

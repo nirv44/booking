@@ -22,11 +22,11 @@ angular.module('app.controllers')
             data: prepareInternOfferToJson($scope.newOfferViewModel)
         }).then(
             function(response){
-                if (response.status == 200) {
+                if (response.status === 200) {
                     initViewModel(); 
                 }
             }, function(response){
-                console.log(response);
+                console.log("Error PostOfferController.PostOffer : ", response);
             }
         );
     };
