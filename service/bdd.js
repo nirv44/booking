@@ -6,19 +6,20 @@ var mongo = require('mongoose');
 
 
 // connect to MongoDB
-mongo.connect('mongodb://127.0.0.1/booking');
+mongo.connect('mongodb://127.0.0.1/booking1');
 	//.then(() =>  console.log('connection succesful'))
 	//.catch((err) => console.error(err));
 
 
 ///////////////////////////////////
-/////////////////////// CARt
+/////////////////////// Cart
 
 var cartSchema = new mongo.Schema({
 	idtrainneeAccount: String,
 	idInternOffer: String
 });
 cartModel = mongo.model('cart',cartSchema);
+
 exports.findOneCartbyTraineeAccount = function(req, res){
 	cartModel.findOne({ idtraineeAccount: req.params.idtraineeaccount }, function (err, post) {
 	if(err) return next(err);
@@ -85,6 +86,20 @@ exports.addInternOffer = function(req, res) {
 	});
 }
 
+exports.updateInterOffer = function(req, res){
+  interOfferModel.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
+  if (err) return next(err);
+    res.json(post);
+  });
+}
+
+exports.deleteInternOffer = function(req, res) {
+  interOfferModel.findByIdAndRemove(req.params.id, req.body, function (err, post) {
+      if (err) return next(err);
+      res.json(post);
+  });
+}
+
 
 //////////////////////////////////
 ////////////////////// creteriaFav
@@ -108,6 +123,13 @@ exports.findAllCriteriaFav = function(req, res) {
     	res.json(post);
 	});
 };
+
+exports.findOneCriteriaFav = function(req, res) {
+  criteriaFavModel.findOne({ _id: req.params.id}, function(err, post){
+    if(err) return (err)
+      res.json(post);
+  });
+}
 
 exports.addCriteriaFav = function(req, res) {
     criteriaFavModel.create(req.body, function (err, post) {
@@ -192,6 +214,12 @@ exports.addtrainneraccount = function(req, res) {
 	});
 }
 
+exports.updatetraineraccount = function(req, res) {
+  trainneraccountModel.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
+  if (err) return next(err);
+    res.json(post);
+  });
+}
 
 //////////////////////////////////
 ////////////////////// companyaccount
@@ -229,16 +257,37 @@ exports.addcompanyaccount = function(req, res) {
       res.json(post);
   });
 }
+exports.findOneCompanyaccount = function(req, res) {
+  companyaccountModel.findOne({ _id: req.params.id}, function(err, post) {
+    if(err) return (err);
+    res.json(post);
+  });
+}
 
+exports.updatecompanyaccount = function(req, res) {
+  companyaccountModel.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
+  if (err) return next(err);
+    res.json(post);
+  });
+}
 
 //////////////////////////////////
 ////////////////////// apply
 
 var applySchema = new mongo.Schema({
   idAccount: String,
-  idState: String,
-  idInternOffer: String
-});
+  State: {
+    value: String
+  },
+  InternOffer: {
+    label: String,
+    earning: String,
+    description: String,
+    referent: String,
+    duration: String,
+    location : String
+  }
+  });
 
 applyModel = mongo.model('apply', applySchema);
 
@@ -269,9 +318,8 @@ exports.addapply = function(req, res) {
 ////////////////////// stateinternoffer
 
 var stateinternofferSchema = new mongo.Schema({
-  idAccount: String,
-  idState: String,
-  idInternOffer: String
+  value: String,
+  idApply: String
 });
 
 stateinternofferModel = mongo.model('stateinternoffer', stateinternofferSchema);
@@ -283,6 +331,13 @@ exports.findAllstateinternoffer = function(req, res) {
       res.json(post);
   });
 };
+
+exports.findOnestatinternOfferByIDApply = function(){
+  stateinternoffer.findOne({ idApply: req.params.id}, function(err, post) {
+    if(err) return (err);
+      res.json(post);
+  })
+}
 
 exports.addstateinternoffer = function(req, res) {
     stateinternofferModel.create(req.body, function (err, post) {

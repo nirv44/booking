@@ -5,6 +5,7 @@
     </ion-header-bar>
     <ion-content>
         <form ng-submit="doSubscribe()">
+        
             <div class="list">
                 <ion-toggle ion-toggle-text ng-checked="subscribeViewModel.isTrainee" ng-model="subscribeViewModel.isTrainee">
                     <b class="input-label">{{subscribeViewModel.isTrainee ? "Stagiaire" : "Entreprise"}}</b>
@@ -65,10 +66,10 @@
                     </label>
                 </div>
                 
-                
                 <label class="item">
                     <button class="button button-block button-positive" type="submit">Enregistrer</button>
                 </label>
+
             </div>
         </form>
     </ion-content>
