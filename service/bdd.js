@@ -2,7 +2,7 @@
 var mongo = require('mongoose');
 
 // Use native Node promises
-mongo.Promise = global.Promise;
+//mongo.Promise = global.Promise;
 
 
 // connect to MongoDB
@@ -11,8 +11,33 @@ mongo.connect('mongodb://127.0.0.1/booking');
 	//.catch((err) => console.error(err));
 
 
+///////////////////////////////////
+/////////////////////// CARt
 
+var cartSchema = new mongo.Schema({
+	idtrainneeAccount: String,
+	idInternOffer: String
+});
+cartModel = mongo.model('cart',cartSchema);
+exports.findOneCartbyTraineeAccount = function(req, res){
+	cartModel.findOne({ idtraineeAccount: req.params.idtraineeaccount }, function (err, post) {
+	if(err) return next(err);
+		res.json(post);
+	});
+}
+exports.findOneCartbyInternOffer = function(req, res) {
+	cartModel.findOne({ idInternOffer: req.params.idinternoffer }, function (err, post){
+		if(err) return next (err);
+		res.json(post);
+	});
+}
 
+exports.addCart = function (req, res) {
+	cartModel.create(req.body, function (err, post) {
+		if(err) return next(err);
+		res.json(post);
+	});
+}
 ///////////////////////////////////
 ////////////////////// INTERN OFFER
 
