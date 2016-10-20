@@ -9,16 +9,17 @@ angular.module('app.controllers', [])
     $rootScope.serverURL = "http://163.172.188.205:3000";
 
     // Form data for the login modal
-    $scope.subscribeViewModel = [];
+    $scope.subscribeViewModel = {};
 
-    // Create the login modal that we will use later
+    // Create the login modal
     $ionicModal.fromTemplateUrl('templates/login.html', {
         scope: $scope
     }).then(function(modal) {
-        $scope.modal = modal;
-        $scope.modal.show();
+        $scope.loginModal = modal;
+        $scope.loginModal.show();
     });
     
+    // Create the subscription modal
     $ionicModal.fromTemplateUrl('templates/subscribe.html', {
         scope: $scope
     }).then(function(modal) {
@@ -27,7 +28,7 @@ angular.module('app.controllers', [])
 
     // Open the login modal
     $scope.login = function() {
-        $scope.modal.show();
+        $scope.loginModal.show();
     };
 
     // Perform the login action when the user submits the login form
@@ -41,7 +42,8 @@ angular.module('app.controllers', [])
                 function(response){
                     if(response.data !== null){
                         $rootScope.user = response.data;
-                        $scope.modal.hide();
+                        $scope.loginModal.hide();
+                        $scope.loginViewModel = {};
                         if (!$scope.user.IsTrainee) {
                             $state.go('app.companyAccount');
                         }
@@ -83,30 +85,30 @@ angular.module('app.controllers', [])
 
     // Perform the subscripe action when the user submits the subscribe form
     $scope.doSubscribe = function() {
-        if($scope.subscribeViewModel.isTrainee == true){
-            var req = {
+        if ($scope.subscribeViewModel.isTrainee === true) {
+            $http({
                 method: 'POST',
-                url: $rootScope.serverURL+'/trainneraccount',
+                url: $rootScope.serverURL + '/trainneraccount',
                 data: subscribeTraineeTojson($scope.subscribeViewModel)
-            };
-            $http(req).then(
+            }).then(
                 function(response){
                     $scope.subscribeModal.hide();
+                    $scope.subscribeViewModel = {};
                 }, function(response){
-
+                    console.log(response);
                 }
             );
-        }else{
-            var req2 = {
+        } else {
+            $http({
                 method: 'POST',
-                url: $rootScope.serverURL+'/companyaccount',
+                url: $rootScope.serverURL + '/companyaccount',
                 data: subscribeCompanyaccountTojson($scope.subscribeViewModel)
-            };
-            $http(req2).then(
+            }).then(
                 function(response){
                     $scope.subscribeModal.hide();
+                    $scope.subscribeViewModel = {};
                 }, function(response){
-        
+                    console.log(response);
                 }
             );           
         }
@@ -119,11 +121,27 @@ angular.module('app.controllers', [])
     
     // Close the inscription form
     $scope.doCloseSubscribeForm = function () {
+        $scope.subscribeViewModel = {};
         $scope.subscribeModal.hide();
     };  
     
     // Show current user cart
     $scope.showCart = function () {
         $state.go('app.cart');
-    };  
+    };
+    
+    $scope.logout = function() {
+        $rootScope.user = {};
+        $rootScope.cartOffers = [];
+        $scope.subscribeViewModel = {};
+        $scope.loginViewModel = {};
+        
+        if (!$scope.user.IsTrainee) {
+            $state.go('app.companyAccount');
+        }
+        else {
+            $state.go('app.offers');
+        }
+        $scope.login();
+    };
 });

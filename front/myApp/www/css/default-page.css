@@ -75,3 +75,7 @@ button.ion-navicon {
     display: block;
     margin: 0px auto;
 }
+
+textarea {
+    background: transparent;
+}

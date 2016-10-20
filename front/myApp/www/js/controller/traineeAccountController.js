@@ -1,27 +1,39 @@
 angular.module('app.controllers')
 .controller('TraineeAccountController', function($scope, $ionicModal) {
     
-    // Form data for the login modal
-    $scope.ratingCompanyViewModel = [];
+    // ViewModel for company rating
+    $scope.ratingCompanyViewModel = {};
     
+    // Create company rating modal
     $ionicModal.fromTemplateUrl('templates/ratingCompany.html', {
         scope: $scope
     }).then(function(modal) {
-        $scope.ratingCompanyViewModel = modal;
+        $scope.ratingCompanyModal = modal;
     });
     
-    // Perform
+    // Open company rating modal
     $scope.doRatingCompany = function() {
-        $scope.ratingCompanyViewModel.show();
-    }
+        $scope.ratingCompanyModal.show();
+    };
     
+    // Close company rating modal
     $scope.doCloseRatingCompanyForm = function() {
-        $scope.ratingCompanyViewModel.hide();
-    }
+        $scope.ratingCompanyModal.hide();
+    };
     
+    // Send current company rating to server
     $scope.doRateCompany = function() {
-        $scope.ratingCompanyViewModel.hide();
-    }
+        // TODO [MLGA] : Send rating to server
+        $scope.ratingCompanyModal.hide();
+    };
+    
+    // Mock
+    $scope.trainee = {
+        id: 1,
+        firstname: 'Toto',
+        lastname: 'Tutu',
+        mail: 'toto.tutu@croc.com'
+    };
     
     // Mock offers
     $scope.myInternships = [

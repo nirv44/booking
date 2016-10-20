@@ -1,28 +1,14 @@
 angular.module('app.controllers')
 .controller('InternOffersController', function($scope, $ionicModal, $http, $rootScope) {
     
-    // ViewModel for filterModal
-    $scope.filterViewModel = [
-        {
-            "label": "Développeur",
-            "earning": "10K€",
-            "description": "description test 1",
-            "location": "Nulle part",
-            "duration": "1 jour",
-            "referent": {
-                "name": "CGI",
-                "logoLink": "http://3.bp.blogspot.com/-6AOA3ACYmos/UPZGQCqEwYI/AAAAAAAAVnM/91uDFflFQEs/s1600/CGI+logo+2013.png"
-            },
-            "currentApply": {
-                "state": "1",
-                "stateLabel": "valid"
-            },
-            "applies": {
-                "state": "1",
-                "stateLabel": "applied"
-            }
-        }   
-    ];
+    // ViewModel for filter modal
+    $scope.filterViewModel = {
+        label: "",
+        location: "",
+        referent: {
+            name: ""
+        },
+    };
     
     // Load offer list
     $http({
@@ -62,7 +48,7 @@ angular.module('app.controllers')
         // Get offer list filtered
         $http({
             method: 'GET',
-            url: $rootScope.serverURL + '/filterInternoffer/' + $scope.filterViewModel,
+            url: $rootScope.serverURL + '/filterInternOffer/' + $scope.filterViewModel,
             headers: {'Content-Type': 'application/json'}
         }).then(
             function(response){
