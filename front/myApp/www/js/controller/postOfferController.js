@@ -2,7 +2,7 @@ angular.module('app.controllers')
 .controller('PostOfferController', function($scope, $rootScope, $http, $state) {
     prepareInternOfferToJson = function(data){
         return JSON.stringify(data);
-    }
+    };
     
     // Declare viewModel for posting offers
     initViewModel = function() {
@@ -12,7 +12,7 @@ angular.module('app.controllers')
                 logoLink: $rootScope.user.logoLink
             }
         };
-    }
+    };
     
     // Send the new offer to server
     $scope.doPostOffer = function() {
@@ -29,7 +29,7 @@ angular.module('app.controllers')
                 console.log(response);
             }
         );
-    }
+    };
     
     // Init viewModel
     initViewModel();

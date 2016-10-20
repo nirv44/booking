@@ -14,18 +14,18 @@ angular.module('app.controllers')
     // Open company rating modal
     $scope.doRatingTrainee = function() {
         $scope.ratingTraineeModal.show();
-    }
+    };
     
     // Close company rating modal
     $scope.doCloseRatingTraineeForm = function() {
         $scope.ratingTraineeModal.hide();
-    }
+    };
     
     // Send current company rating to server
     $scope.doRateTrainee = function() {
         // TODO [MLGA] : Send rating to server
         $scope.ratingTraineeModal.hide();
-    }
+    };
     
     // Mock
     $scope.company = {

@@ -11,21 +11,21 @@ angular.module('app.controllers')
         $scope.ratingCompanyModal = modal;
     });
     
-    // Open rating modal
+    // Open company rating modal
     $scope.doRatingCompany = function() {
         $scope.ratingCompanyModal.show();
-    }
+    };
     
-    // Close rating modal
+    // Close company rating modal
     $scope.doCloseRatingCompanyForm = function() {
         $scope.ratingCompanyModal.hide();
-    }
+    };
     
-    // Send current rating to server
+    // Send current company rating to server
     $scope.doRateCompany = function() {
         // TODO [MLGA] : Send rating to server
         $scope.ratingCompanyModal.hide();
-    }
+    };
     
     // Mock
     $scope.trainee = {
