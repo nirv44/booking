@@ -70,6 +70,7 @@
 .buttonApply {
     border-color: transparent;
     background-color: #0B7892;
+    max-width: 150px;
     color: #fff;
     margin-top: 10px;
     margin-bottom: 10px;
