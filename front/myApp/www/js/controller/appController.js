@@ -126,7 +126,7 @@ angular.module('app.controllers', [])
     };  
     
     // Show current user cart
-    $scope.showCart = function () {
+    $rootScope.showCart = function () {
         $state.go('app.cart');
     };
     

@@ -15,7 +15,6 @@
   background-image: url('../img/trainees-on.png');
   background-size: contain;
 }
-
 .tabs .tab-item .icon.trainees-off {
   background-repeat: no-repeat;
   background-position: 50%;
@@ -23,16 +22,30 @@
   background-size: contain;
 }
 
+
 .tabs .tab-item .icon.offers-on {
   background-repeat: no-repeat;
   background-position: 50%;
   background-image: url('../img/offers-on.png');
   background-size: contain;
 }
-
 .tabs .tab-item .icon.offers-off {
   background-repeat: no-repeat;
   background-position: 50%;
   background-image: url('../img/offers-off.png');
+  background-size: contain;
+}
+
+
+.tabs .tab-item .icon.internships-on {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-image: url('../img/internships-on.png');
+  background-size: contain;
+}
+.tabs .tab-item .icon.internships-off {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-image: url('../img/internships-off.png');
   background-size: contain;
 }

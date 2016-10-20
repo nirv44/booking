@@ -111,5 +111,5 @@ angular.module('app', ['ionic', 'app.controllers'])
     // ===== Help page end =====
 
     // Default url
-    //$urlRouterProvider.otherwise('/app/offers');
+    $urlRouterProvider.otherwise('/app/offers');
 });

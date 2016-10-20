@@ -1,3 +1,6 @@
+<ion-nav-buttons side="right">
+    <img src="/img/cart.png" height="32" width="32" ng-click="showCart()"/>
+</ion-nav-buttons>
 <ion-tabs class="tabs-icon-top tabs-color-active-positive">
     <!-- Main Tab -->
     <ion-tab title="Général" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear">
@@ -18,7 +21,7 @@
     </ion-tab>
 
     <!-- Internships Tab -->
-    <ion-tab title="Mes stages" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong">
+    <ion-tab title="Mes stages" icon-off="internships-off" icon-on="internships-on">
         <ion-view>
             <ion-content>  
                 <form ng-submit="doRatingCompany()">
