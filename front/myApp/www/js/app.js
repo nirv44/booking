@@ -21,20 +21,21 @@ angular.module('app', ['ionic', 'app.controllers'])
         templateUrl: 'templates/menu.html',
         controller: 'AppController'
     })
-    .state('app.compte  ', {
-        url: '/compte',
+    .state('app.traineeAccount', {
+        url: '/traineeAccount',
         views: {
             'mainContent': {
-                templateUrl: 'templates/compteStagiaire.html'
+                templateUrl: 'templates/traineeAccount.html',
+                controller: 'TraineeAccountController'
             }
         }
     })
-    .state('app.compte', {
-        url: '/offers/:offerId',
+    .state('app.companyAccount', {
+        url: '/companyAccount',
         views: {
             'mainContent': {
-                templateUrl: 'templates/myAccount.html',
-                controller: 'myAccountController'
+                templateUrl: 'templates/companyAccount.html',
+                controller: 'CompanyAccountController'
             }
         }
     })
