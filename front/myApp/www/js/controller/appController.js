@@ -49,6 +49,12 @@ angular.module('app.controllers', [])
                 function(response){
                     if(response.data !== null){
                         // SI on trouve pas dans trainee on chercher dans company
+                        $rootScope.user = response.data;
+                        $rootScope.user.isTrainee = true;
+                        
+
+                        $scope.modal.hide();
+                    }else{
                         $http({
                             method: 'GET',
                             url: $rootScope.serverURL + '/trainneraccount/' + $scope.loginViewModel.username + '/' + $scope.loginViewModel.password,
@@ -58,16 +64,13 @@ angular.module('app.controllers', [])
                                 if(responsed !== null){
                                     $rootScope.user = responsed.data;
                                     $rootScope.user.isTrainee = false;
+                                    $scope.modal.hide();
                                 }
                             }, function(responsed){
 
                             }
                         );    
 
-                        $scope.modal.hide();
-                    }else{
-                        $rootScope.user = response.data;
-                        $rootScope.user.isTrainee = true;
                     }
                 }, 
                 function(response){
