@@ -1,30 +1,117 @@
-<ion-view view-title="Mon compte">
-    <ion-content>
-        <table class="tableAccount">
-            <tr>
-                <td class="accountTitle">
-                    {{acount.login}}
-                </td>
-                <td class="logoUser">
+<ion-tabs class="tabs-icon-top tabs-color-active-positive">
 
-                </td>
-            </tr>
-            <tr>
-<!--                <td class="description">
-                    {{offer.description}}
-                </td>
--->                <td class="applyinformations">
-                    <div class="apply">
-                        <button class="buttonApply" type="submit">Postuler</button>
-                    </div>
-                    <div class="informations">
-                        <img src="/img/earning_offer.jpg" height="11" width="11"/>     <strong>{{offer.earning}}</strong><br />
-                        <img src="/img/arobase_offer.jpg" height="11" width="11"/>     {{offer.referent}} <br />
-                        <img src="/img/location_offer.jpg" height="11" width="11"/>     {{offer.location}} <br />
-                        <img src="/img/clock_offer.jpg" height="11" width="11"/>     {{offer.duration}} <br />
-                    </div>
-                </td>
-            </tr>
-        </table>
-    </ion-content>
-</ion-view>
+    <!-- Main Tab `
+    3 onglets :
+    - détail de la company
+    - mes stagiaires
+    - mes offres proposées
+    -->
+    <ion-tab title="Général" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear">
+        <ion-nav-view name="tab-company">
+            <ion-view>
+                <ion-content>
+<<<<<<< HEAD
+                  <td class="Nom">
+                      {{company.nameCompany}}
+                      console.log({{company.nameCompany}});
+                  </td>
+                  <td class="Description">
+                      {{company.description}}
+                  </td>
+                  <td class="Nombre d'employes">
+                      {{company.numberEmployees}}
+                  </td>
+                  <td class="Site internet">
+                      {{company.website}}
+                  </td>
+                </ion-content>
+            </ion-view>
+        </ion-nav-view>
+    </ion-tab>
+
+
+    <ion-tab title="Mes stagiaires" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear">
+        <ion-nav-view name="tab-company">
+            <ion-view>
+                <ion-content>
+                    test tab 1
+=======
+                    <table class="tableCompany">
+                        <tr>
+                            <td class="bigLogoCompany">
+                                <img class="middle-valign" src="{{company.logoLink}}" height="40px" width="40px" />
+                            </td>
+                            <td class="companyName">
+                                {{company.nameCompany}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="descriptionCompany" colspan="2">
+                                <div>
+                                    <br />
+                                    <span>{{company.description}}</span>
+                                    <br /><br />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="companyInfos" colspan="2">
+                                <img src="/img/money.png" height="15" width="15"/> {{company.turnover}}<br />
+                                <img src="/img/at.jpg" height="15" width="15"/> {{company.website}}<br />
+                                <img src="/img/location.png" height="15" width="15"/> {{company.location}}<br />
+                                {{company.type}} <img src="/img/employee.png" height="15" width="15"/> {{company.numberEmployees}}<br />
+                            </td>
+                        </tr>
+                    </table>
+>>>>>>> 5cf03582b698174453ca621ce6124a01ec9ccbd3
+                </ion-content>
+            </ion-view>
+        </ion-nav-view>
+    </ion-tab>
+
+    <ion-tab title="Mes offres" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear">
+        <ion-nav-view name="tab-company">
+            <ion-view>
+                <ion-content>
+                    test tab 1
+                </ion-content>
+            </ion-view>
+        </ion-nav-view>
+    </ion-tab>
+
+    <!-- Internships Tab
+    3 onglets :
+      - général
+      - onglet mes stages
+      - mes candidatures
+    -->
+    <ion-tab title="Général" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong">
+      <ion-nav-view name="tab-intenrships">
+          <ion-view>
+              <ion-content>
+                  test tab 2
+              </ion-content>
+          </ion-view>
+      </ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="Mes stages" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong">
+    <ion-nav-view name="tab-intenrships">
+        <ion-view>
+            <ion-content>
+                test tab 2
+            </ion-content>
+        </ion-view>
+    </ion-nav-view>
+</ion-tab>
+
+<ion-tab title="Mes candidatures" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong">
+  <ion-nav-view name="tab-intenrships">
+      <ion-view>
+          <ion-content>
+              test tab 2
+          </ion-content>
+      </ion-view>
+  </ion-nav-view>
+</ion-tab>
+</ion-tabs>

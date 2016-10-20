@@ -2,26 +2,44 @@
     <ion-content>
         <table class="tableOffer">
             <tr>
-                <td class="offerTitle">
+                <td colspan="2" class="offerTitle">
                     {{offer.label}}
-                </td>
-                <td class="logoCompany">
-                    <img src="/img/{{offer.currentApply.stateLabel}}.png" height="48" width="48" style="vertical-align: middle;"/>
                 </td>
             </tr>
             <tr>
-                <td class="description">
+                <td class="stateOffer">
+                    <img src="/img/{{offer.currentApply.stateLabel}}.png" height="48" width="48" style="vertical-align: middle;"/>
+                </td>
+                <td>
+                    <div class="apply">
+                        <button class="buttonApply" ng-click="addToCart()" type="submit">Ajouter</button>
+                    </div>
+                </td>
+            </tr>
+            <tr>    
+                <td>
+                    <div class="informations">
+                        <div class="uniqueInformation"><img src="/img/earning_offer.jpg" height="20" width="20"/>     <strong>{{offer.earning}}</strong></div>
+                        <div class="uniqueInformation"><img src="/img/arobase_offer.jpg" height="20" width="20"/>     {{offer.referent.name}}</div>                       
+                    </div>
+                </td>
+                <td>
+                    <div  class="informations">
+                        <div class="uniqueInformation"><img src="/img/location_offer.jpg" height="20" width="20"/>     {{offer.location}}</div>
+                        <div class="uniqueInformation"><img src="/img/clock_offer.jpg" height="20" width="20"/>     {{offer.duration}}</div>                        
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="description">
                     {{offer.description}}
                 </td>
-                <td class="applyinformations">
-                    <div class="apply">
-                        <button class="buttonApply" ng-click="addToCart()" type="submit">Postuler</button>
-                    </div>
-                    <div class="informations">
-                        <img src="/img/money.png" height="11" width="11"/>     <strong>{{offer.earning}}</strong><br />
-                        <img src="/img/at.jpg" height="11" width="11"/>     {{offer.referent.name}} <br />
-                        <img src="/img/location.png" height="11" width="11"/>     {{offer.location}} <br />
-                        <img src="/img/clock.png" height="11" width="11"/>     {{offer.duration}} <br />
+            </tr>
+            <tr>
+                <td colspan="2" class="counter">
+                    <div  class="informations">
+                        <img src="/img/counter.png" height="25" width="25" style="vertical-align: middle;"/>
+                        42 personnes consultent cette offre.
                     </div>
                 </td>
             </tr>

@@ -54,15 +54,6 @@ angular.module('app', ['ionic', 'app.controllers'])
             }
         }
     })
-    .state('app.myInternships', {
-        url: '/myInternships',
-        views: {
-            'mainContent': {
-                templateUrl: 'templates/myInternships.html',
-                controller: 'MyInternshipsController'
-            }
-        }
-    })
     // ===== Company account page end =====
     
     
@@ -73,24 +64,6 @@ angular.module('app', ['ionic', 'app.controllers'])
             'mainContent': {
                 templateUrl: 'templates/traineeAccount.html',
                 controller: 'TraineeAccountController'
-            }
-        }
-    })
-    .state('app.myCompanies', {
-        url: '/myCompanies',
-        views: {
-            'mainContent': {
-                templateUrl: 'templates/myCompanies.html',
-                controller: 'MyCompaniesController'
-            }
-        }
-    })
-    .state('app.company', {
-        url: '/myCompanies/:companyId',
-        views: {
-            'mainContent': {
-                templateUrl: 'templates/company.html',
-                controller: 'CompanyController'
             }
         }
     })
