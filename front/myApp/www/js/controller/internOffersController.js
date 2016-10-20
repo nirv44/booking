@@ -4,6 +4,8 @@ angular.module('app.controllers')
     // ViewModel for filterModal
     $scope.filterViewModel = {};
 
+
+
     $scope.ICIJERECUPEREMESSUPPERTINTERNOFFERMAISILFAUTCHANGGERLENOMDELAFOCNTION = function(){
         var req = {
             method: 'GET',
@@ -16,7 +18,7 @@ angular.module('app.controllers')
 
             }, function(response){
 
-            });
+            }
         );
     }
         
