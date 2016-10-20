@@ -1,8 +1,6 @@
 angular.module('app.controllers')
 .controller('InternOfferController', function($http, $scope, $stateParams, $rootScope) {
     if (!$stateParams.offerId) throw new Error("No id passed to InternOfferController");
-    // Récupération de l'id de l'offre en cours
-    $scope.offerId = $stateParams.offerId;
     
     // Mock for the offer
     $scope.offer = { 
@@ -33,7 +31,7 @@ angular.module('app.controllers')
     // Get detailed information of the internship offer
     $http({
         method: 'GET',
-        url: $rootScope.serverURL+'/internoffer/'+$scope.offerId,
+        url: $rootScope.serverURL + '/internoffer/' + $stateParams.offerId,
         headers: {'Content-Type': 'application/json'}
     }).then(
         function(response){

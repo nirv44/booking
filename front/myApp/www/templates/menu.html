@@ -20,14 +20,14 @@
             <ion-list>
                 <ion-item menu-close href="#/app/offers">Mes offres</ion-item>
                 <ion-item menu-close href="#/app/traineeAccount">Mon compte</ion-item>
-              <div ng-if="isTrainee">
-                <ion-item menu-close href="#/app/offers">Mes offres</ion-item>
-                <ion-item menu-close href="#/app/traineeAccount">Mon compte</ion-item>
-              </div>
-              <div ng-if="!isTrainee">
-                <ion-item menu-close href="#/app/companyAccount">Mon compte</ion-item>
-                <ion-item menu-close href="#/app/companyAccount">Déposer une offre</ion-item>
-              </div>
+                <div ng-if="user.isTrainee">
+                  <ion-item menu-close href="#/app/offers">Mes offres</ion-item>
+                  <ion-item menu-close href="#/app/traineeAccount">Mon compte</ion-item>
+                </div>
+                <div ng-if="!user.isTrainee">
+                  <ion-item menu-close href="#/app/companyAccount">Mon compte</ion-item>
+                  <ion-item menu-close href="#/app/companyAccount">Déposer une offre</ion-item>
+                </div>
               <!--<ion-item menu-close href="#/app/help">Aide</ion-item>-->
             </ion-list>
         </ion-content>
