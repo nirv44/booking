@@ -1,8 +1,5 @@
 angular.module('app.controllers')
 .controller('CartController', function($scope, $rootScope, $ionicModal, $filter) {
-    // Get current user offers in cart
-    $scope.offers = $rootScope.cartOffers;
-    
     // Apply form viewModel
     $scope.applyFormViewModel = {};
     
@@ -14,8 +11,8 @@ angular.module('app.controllers')
     });
     
     // Open apply form
-    $scope.apply = function(id) {
-        $scope.applyForm.offerId = id;
+    $scope.apply = function(offer) {
+        $scope.applyForm.offerId = offer._id;
         $scope.applyForm.show();
     };
     
@@ -29,10 +26,10 @@ angular.module('app.controllers')
         $http({
             method: 'POST',
             url: $rootScope.serverURL + '/apply',
-            data: prepareApplianceToJson($scope.applyFormViewModel)
+            data: prepareApplianceToJson({}/*$scope.applyFormViewModel*/)
         }).then(
             function(response){
-                if (response.status == 200) {
+                if (response.status === 200) {
                     $scope.removeOffer($scope.applyForm.offerId);
                     $scope.applyForm.hide();
                 }
@@ -47,8 +44,8 @@ angular.module('app.controllers')
     };
     
     // Remove offer from user's cart
-    $scope.removeOffer = function(id) {
-        var offerToRemove = $filter("filter")($rootScope.cartOffers, { _id:id });
+    $scope.removeOffer = function(offer) {
+        var offerToRemove = $filter("filter")($rootScope.cartOffers, { _id:offer._id });
         var offerIndex = $rootScope.cartOffers.indexOf(offerToRemove);
         $rootScope.cartOffers.splice(offerIndex, 1);
     };
