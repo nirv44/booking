@@ -21,23 +21,8 @@ angular.module('app', ['ionic', 'app.controllers'])
         templateUrl: 'templates/menu.html',
         controller: 'AppController'
     })
-    .state('app.compte  ', {
-        url: '/compte',
-        views: {
-            'mainContent': {
-                templateUrl: 'templates/compteStagiaire.html'
-            }
-        }
-    })
-    .state('app.compte', {
-        url: '/offers/:offerId',
-        views: {
-            'mainContent': {
-                templateUrl: 'templates/myAccount.html',
-                controller: 'myAccountController'
-            }
-        }
-    })
+    
+    // ===== Offers page start =====
     .state('app.offers', {
         url: '/offers',
         views: {
@@ -56,12 +41,38 @@ angular.module('app', ['ionic', 'app.controllers'])
             }
         }
     })
+    // ===== Offers page end =====
+    
+    
+    // ===== Company account page start =====
+    .state('app.companyAccount', {
+        url: '/companyAccount',
+        views: {
+            'mainContent': {
+                templateUrl: 'templates/companyAccount.html',
+                controller: 'CompanyAccountController'
+            }
+        }
+    })
     .state('app.myInternships', {
         url: '/myInternships',
         views: {
             'mainContent': {
                 templateUrl: 'templates/myInternships.html',
                 controller: 'MyInternshipsController'
+            }
+        }
+    })
+    // ===== Company account page end =====
+    
+    
+    // ===== Trainee account page start =====
+    .state('app.traineeAccount', {
+        url: '/traineeAccount',
+        views: {
+            'mainContent': {
+                templateUrl: 'templates/traineeAccount.html',
+                controller: 'TraineeAccountController'
             }
         }
     })
@@ -83,6 +94,10 @@ angular.module('app', ['ionic', 'app.controllers'])
             }
         }
     })
+    // ===== Trainee account page end =====
+    
+    
+    // ===== Cart page start =====
     .state('app.cart', {
         url: '/cart',
         views: {
@@ -92,7 +107,8 @@ angular.module('app', ['ionic', 'app.controllers'])
             }
         }
     });
+    // ===== Cart page end =====
 
-    // if none of the above states are matched, use this as the fallback
+    // Default url
     $urlRouterProvider.otherwise('/app/offers');
 });
