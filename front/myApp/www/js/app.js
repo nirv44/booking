@@ -79,8 +79,34 @@ angular.module('app', ['ionic', 'app.controllers'])
                 controller: 'CartController'
             }
         }
-    });
+    })
     // ===== Cart page end =====
+    
+    
+    // ===== Post offer page start =====
+    .state('app.postOffer', {
+        url: '/postOffer',
+        views: {
+            'mainContent': {
+                templateUrl: 'templates/postOffer.html',
+                controller: 'PostOfferController'
+            }
+        }
+    })
+    // ===== Post offer page end =====
+    
+    
+    // ===== Help page start =====
+    .state('app.help', {
+        url: '/help',
+        views: {
+            'mainContent': {
+                templateUrl: 'templates/help.html',
+                controller: 'HelpController'
+            }
+        }
+    });
+    // ===== Help page end =====
 
     // Default url
     $urlRouterProvider.otherwise('/app/offers');

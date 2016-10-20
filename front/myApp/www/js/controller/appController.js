@@ -1,12 +1,5 @@
 angular.module('app.controllers', [])
 .controller('AppController', function($scope, $ionicModal, $http, $state, $rootScope) {
-
-    // With the new view caching in Ionic, Controllers are only called
-    // when they are recreated or on app start, instead of every page change.
-    // To listen for when this page is active (for example, to refresh data),
-    // listen for the $ionicView.enter event:
-    //$scope.$on('$ionicView.enter', function(e) {
-    //});
     
     // Define global variable for offers added to cart
     $rootScope.cartOffers = [];
@@ -39,7 +32,6 @@ angular.module('app.controllers', [])
 
     // Perform the login action when the user submits the login form
     $scope.doLogin = function() {
-
         if ($scope.loginViewModel.username !== "" && $scope.loginViewModel.password !== "") {
             $http({
                 method: 'GET',
@@ -50,8 +42,12 @@ angular.module('app.controllers', [])
                     if(response.data !== null){
                         $rootScope.user = response.data;
                         $scope.modal.hide();
-                    }else{
-                        
+                        if (!$scope.user.IsTrainee) {
+                            $state.go('app.companyAccount');
+                        }
+                        else {
+                            $state.go('app.offers');
+                        }
                     }
                 }, 
                 function(response){
@@ -85,10 +81,8 @@ angular.module('app.controllers', [])
         });
     };
 
-
     // Perform the subscripe action when the user submits the subscribe form
     $scope.doSubscribe = function() {
-
         if($scope.subscribeViewModel.isTrainee == true){
             var req = {
                 method: 'POST',
@@ -116,7 +110,6 @@ angular.module('app.controllers', [])
                 }
             );           
         }
-
     };
     
     // Open the inscription form
