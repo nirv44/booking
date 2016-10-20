@@ -48,29 +48,10 @@ angular.module('app.controllers', [])
             }).then(
                 function(response){
                     if(response.data !== null){
-                        // SI on trouve pas dans trainee on chercher dans company
                         $rootScope.user = response.data;
-                        $rootScope.user.isTrainee = true;
-                        
-
                         $scope.modal.hide();
                     }else{
-                        $http({
-                            method: 'GET',
-                            url: $rootScope.serverURL + '/trainneraccount/' + $scope.loginViewModel.username + '/' + $scope.loginViewModel.password,
-                            headers: {'Content-Type': 'application/json'}
-                        }).then(
-                            function(responsed){
-                                if(responsed !== null){
-                                    $rootScope.user = responsed.data;
-                                    $rootScope.user.isTrainee = false;
-                                    $scope.modal.hide();
-                                }
-                            }, function(responsed){
-
-                            }
-                        );    
-
+                        
                     }
                 }, 
                 function(response){
