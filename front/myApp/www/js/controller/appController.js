@@ -43,7 +43,7 @@ angular.module('app.controllers', [])
         if ($scope.loginViewModel.username !== "" && $scope.loginViewModel.password !== "") {
             $http({
                 method: 'GET',
-                url: $rootScope.serverURL + '/trainneraccount/' + $scope.loginViewModel.username + '/' + $scope.loginViewModel.password,
+                url: $rootScope.serverURL + '/account/' + $scope.loginViewModel.username + '/' + $scope.loginViewModel.password,
                 headers: {'Content-Type': 'application/json'}
             }).then(
                 function(response){
