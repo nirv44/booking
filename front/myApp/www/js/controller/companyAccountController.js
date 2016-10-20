@@ -1,6 +1,6 @@
 angular.module('app.controllers')
-.controller('CompanyAccountController', function($scope) {
-    
+.controller('CompanyAccountController', function($scope, $stateParams) {
+
     // Mock
     $scope.company = { 
         id: 1, 
