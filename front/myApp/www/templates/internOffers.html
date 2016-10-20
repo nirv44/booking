@@ -3,11 +3,15 @@
         <img src="/img/cart.png" height="32" width="32" ng-click="showCart()"/>
     </ion-nav-buttons>
     <ion-content>
-        <img class="search-btn" src="/img/search.png" ng-click="filterOffer()" height="30" width="30"/>
-        <span class="font-16">Filtrer les offres</span>
+        <span class="font-16">
+            <img class="search-btn" src="/img/search.png" ng-click="filterOffer()" height="30" width="30"/>
+            Filtrer les offres
+        </span>
         
-        <img class="search-btn" src="/img/delete.png" ng-click="deleteFilter()" height="30" width="30"/>
-        <span class="font-16">Supprimer les filtres</span>
+        <span class="font-16">
+            <img class="delete-btn" src="/img/delete.png" ng-click="deleteFilter()" height="30" width="30"/>
+            Supprimer les filtres
+        </span>
         
         <ion-list class="offer-list">
             <ion-item ng-repeat="offer in offers" href="#/app/offers/{{offer._id}}">

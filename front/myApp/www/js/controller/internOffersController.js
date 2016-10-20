@@ -52,7 +52,7 @@ angular.module('app.controllers')
                 name: $scope.filterViewModel.referent.name
             }
         }
-        return viewModel;
+        return JSON.stringify(viewModel);
     };
     
     // Init viewModel for filtering offers
