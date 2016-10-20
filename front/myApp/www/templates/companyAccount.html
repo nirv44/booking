@@ -38,7 +38,7 @@
 
     <!-- Internships Tab -->
     <ion-tab title="Mes stagiaires" icon-off="trainees-off" icon-on="trainees-on">
-        <ion-nav-view name="tab-company">
+        <ion-nav-view name="tab-intership">
             <ion-view>
                 <ion-content>   
                     <form ng-submit="doRatingTrainee()">
@@ -76,11 +76,24 @@
 
     <!-- Offers Tab -->
     <ion-tab title="Mes offres" icon-off="offers-off" icon-on="offers-on">
-        <ion-nav-view name="tab-company">
+        <ion-nav-view name="tab-offers">
             <ion-view>
                 <ion-content>        
                     <ion-list>
-                        <ion-item ng-repeat="internship in myInternships">
+                        <ion-item ng-repeat="companyOffer in companyOffers">
+                            <table>
+                                <tr>
+                                    <td class="middle-valign">
+                                        <strong class="font-18">{{companyOffer.label}}</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="middle-valign">
+                                        <img class="middle-valign" src="{{companyOffer.referent.logoLink}}" height="24" width="24"/>
+                                        <span>{{companyOffer.referent.name}} - {{companyOffer.duration}}</span>
+                                    </td>
+                                </tr>
+                            </table>
                         </ion-item>
                     </ion-list>
                 </ion-content>

@@ -1,8 +1,9 @@
 angular.module('app.controllers')
-.controller('CompanyAccountController', function($scope, $ionicModal, $stateParams) {
+.controller('CompanyAccountController', function($http, $scope, $rootScope, $ionicModal) {
     
     // Form data for the login modal
     $scope.ratingTraineeViewModel = [];
+    $scope.companyOffers = [];
     
     $ionicModal.fromTemplateUrl('templates/ratingTrainee.html', {
         scope: $scope
@@ -155,4 +156,22 @@ angular.module('app.controllers')
             }
         }
     ];
+    
+    // 
+    $http({
+        method: 'GET',
+        url: $rootScope.serverURL + '/internoffer/company/' + $rootScope.user.name,
+        headers: {'Content-Type': 'application/json'}
+    }).then(
+        function(response){
+            if(response.data !== null){
+                console.log(response.data);
+                //declar the offer
+                $scope.companyOffers = response.data;
+            }
+        }, 
+        function(response){
+            console.log(response);
+        }
+    );
 });
