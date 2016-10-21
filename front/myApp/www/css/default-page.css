@@ -55,6 +55,9 @@ button.ion-navicon {
 .hpad-10 {
     padding: 0px 10px;
 }
+.right-pad-10 {
+    padding:0px 10px 0px 0px !important;
+}
 .right-pad-30 {
     padding:0px 30px 0px 0px !important;
 }

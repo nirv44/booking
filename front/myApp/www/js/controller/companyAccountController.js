@@ -1,5 +1,5 @@
 angular.module('app.controllers')
-.controller('CompanyAccountController', function($http, $scope, $rootScope, $ionicModal) {
+.controller('CompanyAccountController', function($http, $scope, $rootScope, $ionicModal, $filter) {
     // Form data for the login modal
     $scope.ratingTraineeViewModel = [];
     $scope.companyOffers = [];
@@ -15,7 +15,8 @@ angular.module('app.controllers')
     });
     
     // Open company rating modal
-    $scope.doRatingTrainee = function() {
+    $scope.doRatingTrainee = function(trainee) {
+        $scope.ratingTraineeModal.model = trainee;
         $scope.ratingTraineeModal.show();
     };
     
@@ -27,6 +28,11 @@ angular.module('app.controllers')
     // Send current company rating to server
     $scope.doRateTrainee = function() {
         // TODO [MLGA] : Send rating to server
+        
+        var traineeToRemove = $filter("filter")($scope.trainees, { _id:$scope.ratingTraineeModal.model._id });
+        var traineeIndex = $scope.trainees.indexOf(traineeToRemove);
+        $scope.trainees.splice(traineeIndex, 1);
+        
         $scope.ratingTraineeModal.hide();
     };
     

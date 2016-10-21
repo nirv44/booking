@@ -32,34 +32,32 @@
         <ion-nav-view name="tab-intership">
             <ion-view>
                 <ion-content>   
-                    <form ng-submit="doRatingTrainee()">
-                        <ion-list>
-                            <ion-item ng-repeat="trainee in trainees">
-                                <table class="full-width">
-                                    <tbody>
-                                        <tr>
-                                            <td rowspan="2">
-                                                <img class="middle-valign" src="https://s14.postimg.org/4x5ul0rz5/employee.png" height="32" width="32"/> 
-                                            </td>
-                                            <td class="middle-valign">
-                                                {{trainee.intern.firstName}} {{trainee.intern.lastName}} - {{trainee.intern.mail}}
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <span>{{trainee.label}} - {{trainee.duration}}</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="2">
-                                                <button class="button button-block button-positive" type="submit">Evaluer</button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </ion-item>
-                        </ion-list>
-                    </form>
+                    <ion-list>
+                        <ion-item ng-repeat="trainee in trainees">
+                            <table class="full-width">
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="2">
+                                            <img class="middle-valign" src="https://s14.postimg.org/4x5ul0rz5/employee.png" height="32" width="32"/> 
+                                        </td>
+                                        <td class="middle-valign">
+                                            {{trainee.intern.firstName}} {{trainee.intern.lastName}} - {{trainee.intern.mail}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span>{{trainee.label}} - {{trainee.duration}}</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <button class="button button-block button-positive" ng-click="doRatingTrainee({{trainee}})" type="submit">Evaluer</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </ion-item>
+                    </ion-list>
                 </ion-content>
             </ion-view>
         </ion-nav-view>

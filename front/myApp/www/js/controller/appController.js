@@ -6,7 +6,7 @@ angular.module('app.controllers', [])
     
     // Form data for the login modal
     $scope.loginViewModel = {};
-    $rootScope.serverURL = "http://163.172.188.205:3000";
+    $rootScope.serverURL = "http://163.172.185.219:3000";
     
     // Images URL
     $rootScope.imagesUrl = {
