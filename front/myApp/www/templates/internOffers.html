@@ -1,15 +1,15 @@
 <ion-view view-title="Offres de stage">
     <ion-nav-buttons side="right">
-        <img src="../../resources/img/cart.png" height="32" width="32" ng-click="showCart()"/>
+        <img src="{{imagesURL.cart}}" height="32" width="32" ng-click="showCart()"/>
     </ion-nav-buttons>
     <ion-content>
         <span class="font-16">
-            <img class="search-btn" src="../../resources/img/search.png" ng-click="filterOffer()" height="30" width="30"/>
+            <img class="search-btn" src="{{imagesURL.search}}" ng-click="filterOffer()" height="30" width="30"/>
             Filtrer les offres
         </span>
         
         <span class="font-16">
-            <img class="delete-btn" src="../../resources/img/delete.png" ng-click="deleteFilter()" height="30" width="30"/>
+            <img class="delete-btn" src="{{imagesURL.delete}}" ng-click="deleteFilter()" height="30" width="30"/>
             Supprimer les filtres
         </span>
         
@@ -19,7 +19,7 @@
                     <tbody>
                         <tr>
                             <td rowspan="2" class="right-pad-30">
-                                <img class="middle-valign" src="../../resources/img/{{offer.currentApply.stateLabel}}.png" height="48" width="48"/>
+                                <img class="middle-valign" src="{{imagesURL[offer.currentApply.stateLabel]}}.png" height="48" width="48"/>
                             </td>
                             <td class="middle-valign">
                                 <strong class="font-18">{{offer.label}}</strong>

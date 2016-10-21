@@ -12,13 +12,13 @@
 .tabs .tab-item .icon.trainees-on {
   background-repeat: no-repeat;
   background-position: 50%;
-  background-image: url('../img/trainees-on.png');
+  background-image: url('http://hpics.li/68271a3');
   background-size: contain;
 }
 .tabs .tab-item .icon.trainees-off {
   background-repeat: no-repeat;
   background-position: 50%;
-  background-image: url('../img/trainees-off.png');
+  background-image: url('http://hpics.li/ff1b466');
   background-size: contain;
 }
 
@@ -26,13 +26,13 @@
 .tabs .tab-item .icon.offers-on {
   background-repeat: no-repeat;
   background-position: 50%;
-  background-image: url('../img/offers-on.png');
+  background-image: url('http://hpics.li/1c9a818');
   background-size: contain;
 }
 .tabs .tab-item .icon.offers-off {
   background-repeat: no-repeat;
   background-position: 50%;
-  background-image: url('../img/offers-off.png');
+  background-image: url('http://hpics.li/c145d7d');
   background-size: contain;
 }
 
@@ -40,12 +40,12 @@
 .tabs .tab-item .icon.internships-on {
   background-repeat: no-repeat;
   background-position: 50%;
-  background-image: url('../img/internships-on.png');
+  background-image: url('http://hpics.li/d213c05');
   background-size: contain;
 }
 .tabs .tab-item .icon.internships-off {
   background-repeat: no-repeat;
   background-position: 50%;
-  background-image: url('../img/internships-off.png');
+  background-image: url('http://hpics.li/6689659');
   background-size: contain;
 }

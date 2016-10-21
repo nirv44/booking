@@ -7,7 +7,35 @@ angular.module('app.controllers', [])
     // Form data for the login modal
     $scope.loginViewModel = {};
     $rootScope.serverURL = "http://163.172.188.205:3000";
-
+    
+    // Images URL
+    $rootScope.imagesUrl = {
+        available: 'http://hpics.li/3384556',
+        applied: 'http://hpics.li/49ac206',
+        at: 'http://hpics.li/e316a20',
+        cart: 'http://hpics.li/5de95a1',
+        clock: 'http://hpics.li/38a7685',
+        close: 'http://hpics.li/10b6678',
+        counter: 'http://hpics.li/1118546',
+        delete: 'http://hpics.li/1872279',
+        delete2: 'http://hpics.li/1423278',
+        employee: 'http://hpics.li/6294111',
+        globe: 'http://hpics.li/3038ffb',
+        help: 'http://hpics.li/018dc71',
+        internshipsOff: 'http://hpics.li/6689659',
+        internshipsOn: 'http://hpics.li/d213c05',
+        location: 'http://hpics.li/df88071',
+        logo: 'http://hpics.li/8c1cb93',
+        money: 'http://hpics.li/2c840af',
+        offersOff: 'http://hpics.li/c145d7d',
+        offersOn: 'http://hpics.li/1c9a818',
+        refused: 'http://hpics.li/37702f9',
+        search: 'http://hpics.li/e2295e0',
+        traineesOff: 'http://hpics.li/ff1b466',
+        traineesOn: 'http://hpics.li/68271a3',
+        valid: 'http://hpics.li/9c36db0'
+    };
+    
     // Form data for the login modal
     $scope.subscribeViewModel = {};
 

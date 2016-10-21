@@ -1,6 +1,6 @@
 <ion-view view-title="Offre">
     <ion-nav-buttons side="right">
-        <img src="../../resources/img/cart.png" height="32" width="32" ng-click="showCart()"/>
+        <img src="{{imagesURL.cart}}" height="32" width="32" ng-click="showCart()"/>
     </ion-nav-buttons>
     <ion-content>
         <table class="tableOffer">
@@ -11,7 +11,7 @@
             </tr>
             <tr>
                 <td class="stateOffer">
-                    <img src="../../resources/img/{{offer.currentApply.stateLabel}}.png" height="48" width="48" style="vertical-align: middle;"/>
+                    <img src="{{imagesURL[offer.currentApply.stateLabel]}}.png" height="48" width="48" style="vertical-align: middle;"/>
                 </td>
                 <td>
                     <div class="apply">
@@ -22,14 +22,14 @@
             <tr>    
                 <td>
                     <div class="informations">
-                        <div class="uniqueInformation"><img src="../../resources/img/money.png" height="20" width="20"/>     <strong>{{offer.earning}}</strong></div>
-                        <div class="uniqueInformation"><img src="../../resources/img/at.png" height="20" width="20"/>     {{offer.referent.name}}</div>                       
+                        <div class="uniqueInformation"><img src="{{imagesURL.money}}" height="20" width="20"/>     <strong>{{offer.earning}}</strong></div>
+                        <div class="uniqueInformation"><img src="{{imagesURL.at}}" height="20" width="20"/>     {{offer.referent.name}}</div>                       
                     </div>
                 </td>
                 <td>
                     <div  class="informations">
-                        <div class="uniqueInformation"><img src="../../resources/img/location.png" height="20" width="20"/>     {{offer.location}}</div>
-                        <div class="uniqueInformation"><img src="../../resources/img/clock.png" height="20" width="20"/>     {{offer.duration}}</div>                        
+                        <div class="uniqueInformation"><img src="{{imagesURL.location}}" height="20" width="20"/>     {{offer.location}}</div>
+                        <div class="uniqueInformation"><img src="{{imagesURL.clock}}" height="20" width="20"/>     {{offer.duration}}</div>                        
                     </div>
                 </td>
             </tr>
@@ -41,7 +41,7 @@
             <tr>
                 <td colspan="2" class="counter">
                     <div  class="informations">
-                        <img src="../../resources/img/counter.png" height="25" width="25" style="vertical-align: middle;"/>
+                        <img src="{{imagesURL.counter}}" height="25" width="25" style="vertical-align: middle;"/>
                         42 personnes consultent cette offre.
                     </div>
                 </td>
