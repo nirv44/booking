@@ -19,10 +19,10 @@
                     <tbody>
                         <tr>
                             <td rowspan="2" class="right-pad-30">
-                                <img class="middle-valign" ng-if="offer.currentApply.stateLabel == 'available'" src="https://s14.postimg.org/z3s6mu2gx/available.png" height="48" width="48"/>
-                                <img class="middle-valign" ng-if="offer.currentApply.stateLabel == 'applied'"src="https://s21.postimg.org/eirsi14wn/applied.png" height="48" width="48"/>
-                                <img class="middle-valign" ng-if="offer.currentApply.stateLabel == 'valid'" src="https://s12.postimg.org/e7ymv3akt/valid.png" height="48" width="48"/>
-                                <img class="middle-valign" ng-if="offer.currentApply.stateLabel == 'refused'" src="https://s13.postimg.org/hcmuzndtj/refused.png" height="48" width="48"/>
+                                <img class="middle-valign" ng-if="offer.currentApply.stateLabel === 'available'" src="https://s14.postimg.org/z3s6mu2gx/available.png" height="48" width="48"/>
+                                <img class="middle-valign" ng-if="offer.currentApply.stateLabel === 'applied'"src="https://s21.postimg.org/eirsi14wn/applied.png" height="48" width="48"/>
+                                <img class="middle-valign" ng-if="offer.currentApply.stateLabel === 'valid'" src="https://s12.postimg.org/e7ymv3akt/valid.png" height="48" width="48"/>
+                                <img class="middle-valign" ng-if="offer.currentApply.stateLabel === 'refused'" src="https://s13.postimg.org/hcmuzndtj/refused.png" height="48" width="48"/>
                             </td>
                             <td class="middle-valign">
                                 <strong class="font-18">{{offer.label}}</strong>
